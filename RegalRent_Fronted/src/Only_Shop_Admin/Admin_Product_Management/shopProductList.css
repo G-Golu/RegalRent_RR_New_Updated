@@ -1,0 +1,138 @@
+/* ================= PAGE ================= */
+.product-list-page {
+  padding: 25px 35px;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* ================= HEADER SECTION ================= */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* TITLE */
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ================= SEARCH BAR ================= */
+.search-input {
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s ease;
+  background: #ffffff;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= LOADING ================= */
+.loading-text {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* ================= TABLE WRAPPER ================= */
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* HEADER */
+.product-table thead {
+  background: #f1f5f9;
+}
+
+.product-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ROW */
+.product-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  vertical-align: middle;
+}
+
+/* ROW HOVER */
+.product-table tbody tr:hover {
+  background: #f9fafb;
+  transition: 0.2s;
+}
+
+/* ================= IMAGE ================= */
+.table-image {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ================= STATUS BADGE ================= */
+.status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ================= NO DATA ================= */
+.no-data {
+  text-align: center;
+  padding: 18px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+
+/* ================= PAGE FIX (IMPORTANT) ================= */
+.product-list-page {
+  margin-left: 260px;   /* sidebar width */
+  padding: 25px 35px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  width: calc(100% - 260px);
+  box-sizing: border-box;
+}

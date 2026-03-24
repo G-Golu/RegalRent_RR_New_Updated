@@ -1,0 +1,948 @@
+/* ================= WRAPPER ================= */
+/* .royal-landing-wrapper {
+  width: 100%;
+} */
+
+/* ================= TITLE ================= */
+/* .royal-landing-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 40px 0;
+} */
+
+/* ================= SECTION ================= */
+/* .royal-landing-section {
+  min-height: 100vh;
+  padding: 80px 40px;
+  background: #f8f8f8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* ================= CONTENT ================= */
+/* .royal-landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+
+  max-width: 1200px;
+  width: 100%;
+} */
+
+/* REVERSE */
+/* .royal-landing-content.reverse {
+  flex-direction: row-reverse;
+} */
+
+/* ================= IMAGE ================= */
+/* .royal-landing-content img {
+  width: 40%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.royal-landing-content img:hover {
+  transform: scale(1.05);
+} */
+
+/* ================= TEXT ================= */
+/* .royal-landing-text {
+  width: 50%;
+}
+
+.royal-landing-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.royal-landing-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+} */
+
+/* ================= MOBILE ================= */
+/* @media (max-width: 768px) {
+  .royal-landing-content,
+  .royal-landing-content.reverse {
+    flex-direction: column;
+  }
+
+  .royal-landing-content img,
+  .royal-landing-text {
+    width: 100%;
+  }
+
+  .royal-landing-content img {
+    height: 260px;
+  }
+} */
+
+
+/* this is old or real css ==================== */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= WRAPPER ================= */
+.royal-landing-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= TITLE ================= */
+.royal-landing-wrapper .royal-landing-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 40px 0;
+}
+
+/* ================= SECTION ================= */
+.royal-landing-wrapper .royal-landing-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 100px;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(to right, #ffffff, #f1f5f9);
+}
+
+/* ================= CONTENT ================= */
+.royal-landing-wrapper .royal-landing-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 80px;
+}
+
+/* REVERSE */
+.royal-landing-wrapper .royal-landing-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ================= IMAGE ================= */
+.royal-landing-wrapper .royal-landing-content img {
+  width: 55%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+
+.royal-landing-wrapper .royal-landing-content img:hover {
+  transform: scale(1.04);
+}
+
+
+
+
+
+/* ================= SLIDER CONTAINER ================= */
+/* .royal-landing-wrapper .royal-landing-image-slider {
+  width: 55%;
+  overflow: hidden;
+  border-radius: 20px;
+  transform: rotate(-8deg); 
+} */
+
+/* ================= TRACK ================= */
+.royal-landing-wrapper .royal-landing-slide-track {
+  display: flex;
+  width: calc(250px * 8); /* total images */
+
+  animation: scrollSlider 20s linear infinite;
+
+  animation-direction: reverse;
+}
+
+/* ================= IMAGES ================= */
+
+.royal-flip-slider {
+  position: relative;
+  width: 65%;
+  height: 900px;
+  perspective: 1400px;
+}
+
+/* cards stacked */
+.flip-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  transform-origin: bottom right;  /* 👈 corner pakadna */
+  animation: flipPage 9s infinite;
+}
+
+/* delay for each */
+.flip-card:nth-child(2) {
+  animation-delay: 3s;
+}
+.flip-card:nth-child(3) {
+  animation-delay: 6s;
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes flipPage {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+    z-index: 3;
+  }
+
+  40% {
+    transform: rotateY(-40deg) rotateX(10deg);
+  }
+
+  60% {
+    transform: rotateY(-90deg) rotateX(20deg);
+    z-index: 1;
+  }
+
+  100% {
+    transform: rotateY(-180deg);
+    z-index: 0;
+  }
+}
+
+@keyframes scrollSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* ================= TEXT ================= */
+.royal-landing-wrapper .royal-landing-text {
+  width: 45%;
+  animation: fadeText 0.5s ease;
+
+}
+
+
+
+.royal-landing-wrapper .royal-landing-text p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  animation: fadeText 0.5s ease;
+}
+
+
+
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .royal-landing-wrapper .royal-landing-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .royal-landing-wrapper .royal-landing-content,
+  .royal-landing-wrapper .royal-landing-content.reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .royal-landing-wrapper .royal-landing-content img,
+  .royal-landing-wrapper .royal-landing-text {
+    width: 100%;
+    animation: fadeText 0.5s ease;
+  }
+
+  .royal-landing-wrapper .royal-landing-content img {
+    height: 260px;
+  }
+
+  .royal-landing-wrapper .royal-landing-text h2 {
+    font-size: 28px;
+    animation: fadeText 0.5s ease;
+  }
+}
+
+/* main heading */
+.royal-landing-text .main-heading {
+  font-size: 42px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* slide title */
+.royal-landing-text .slide-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #605f5f;
+}
+
+/* description */
+.royal-landing-text .slide-desc {
+  font-size: 18px;
+  color: #cd3939;
+  line-height: 1.7;
+}
+
+
+
+
+/* ================= SIMPLE SLIDER ================= */
+.royal-landing-wrapper .royal-slider {
+  position: relative;
+  width: 65%;
+  height: 900px;
+}
+
+.royal-landing-wrapper .royal-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+ object-position:  top;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  transition: 0.5s;
+}
+
+/* buttons */
+.royal-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+
+  font-size: 28px;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  border-radius: 50%;
+}
+
+.royal-slider .left-btn {
+  left: 10px;
+}
+
+.royal-slider .right-btn {
+  right: 10px;
+}
+
+.royal-slider button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+
+
+
+/* ===== PREMIUM HEADING ONLY ===== */
+.royal-landing-text h1 {
+  font-size: 34px;
+  font-weight: 700;
+white-space: nowrap; 
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 19px;
+  margin-top: 0;
+
+  color: #282c2a;
+}
+
+/* icon spacing better */
+.royal-landing-text h1::first-letter {
+  font-size: 28px;
+}
+
+
+
+
+
+.slide-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.slide-title svg {
+  font-size: 30px;
+}
+
+
+
+
+/* ================= SLIDER BUTTONS ================= */
+.royal-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  /* 🔥 Glass effect */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+  font-size: 22px;
+
+  /* shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  transition: all 0.3s ease;
+}
+
+/* left */
+.royal-slider .left-btn {
+  left: 20px;
+}
+
+/* right */
+.royal-slider .right-btn {
+  right: 20px;
+}
+
+/* 🔥 hover effect */
+.royal-slider button:hover {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* 🔥 click effect */
+.royal-slider button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+
+
+/*  ==========  Only Modern Technology section  ====================== */
+
+ /*  ========== TECHNOLOGY SECTION (CLEAN + MATCHING UI) ========== */
+
+/* image wrapper */
+.royal-landing-wrapper .tech-image-wrapper {
+  width: 55%;
+}
+
+/* image */
+.royal-landing-wrapper .tech-image-wrapper img {
+  width: 100%;
+  height: auto;   
+  max-height: 700px;         /* optional control */
+  object-fit: contain; 
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transition: 0.4s;
+}
+
+.royal-landing-wrapper .tech-image-wrapper img:hover {
+  transform: scale(1.04);
+}
+
+/* heading */
+.royal-landing-wrapper .tech-heading {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #282c2a;
+}
+
+/* list */
+.royal-landing-wrapper .tech-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* list items */
+.royal-landing-wrapper .tech-list li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #555;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.royal-landing-wrapper .tech-list li:hover {
+  transform: translateX(6px);
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .royal-landing-wrapper .tech-image-wrapper img {
+    width: 100%;
+    height: auto;
+
+    min-height: 300px;   
+    max-height: 500px;   
+
+    object-fit: contain;
+
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+.royal-landing-wrapper .tech-heading {
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= TEAM STACK (MATCHED WITH MEDIA STACK) ================= */
+
+.royal-team-stack {
+  position: relative;
+  width: 100%;                 /* ✅ same as media */
+  height: 420px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  perspective: 1200px;
+  margin-top: 40px;
+}
+
+/* ================= CARDS ================= */
+
+.royal-team-card {
+  position: absolute;
+  width: 260px;
+  height: 340px;
+
+  object-fit: cover;
+  object-position: top center;
+
+  border-radius: 20px;
+
+  transition: all 0.5s ease;
+  cursor: pointer;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  filter: brightness(0.85);
+}
+
+/* ================= CENTER CARD ================= */
+
+.royal-team-card:nth-child(3) {
+  transform: translateX(0) scale(1.1);
+  z-index: 5;
+  filter: brightness(1);
+}
+
+/* ================= LEFT ================= */
+
+.royal-team-card:nth-child(1) {
+  transform: translateX(-220px) rotate(-15deg) scale(0.9);
+  z-index: 2;
+}
+
+.royal-team-card:nth-child(2) {
+  transform: translateX(-110px) rotate(-8deg) scale(0.95);
+  z-index: 3;
+}
+
+/* ================= RIGHT ================= */
+
+.royal-team-card:nth-child(4) {
+  transform: translateX(110px) rotate(8deg) scale(0.95);
+  z-index: 3;
+}
+
+.royal-team-card:nth-child(5) {
+  transform: translateX(220px) rotate(15deg) scale(0.9);
+  z-index: 2;
+}
+
+/* ================= HOVER ================= */
+
+.royal-team-card:hover {
+  transform: translateY(-20px) scale(1.12) !important;
+  z-index: 10;
+  filter: brightness(1.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= GLASS OVERLAY ================= */
+
+.royal-team-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4),
+    rgba(255, 255, 255, 0.05)
+  );
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  /* 🔥 layout column में आ जाए */
+  .royal-landing-wrapper .royal-landing-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 🔥 stack full width ले */
+  .royal-team-stack {
+    width: 100%;
+    height: 260px;
+    margin-bottom: 20px;
+  }
+
+  /* 🔥 cards center में compact हो जाए */
+  .royal-team-card {
+    width: 150px;
+    height: 200px;
+  }
+
+  /* 🔥 reduce spread (IMPORTANT) */
+  .royal-team-card:nth-child(1) {
+    transform: translateX(-90px) rotate(-10deg);
+  }
+
+  .royal-team-card:nth-child(2) {
+    transform: translateX(-45px) rotate(-5deg);
+  }
+
+  .royal-team-card:nth-child(3) {
+    transform: translateX(0) scale(1.05);
+  }
+
+  .royal-team-card:nth-child(4) {
+    transform: translateX(45px) rotate(5deg);
+  }
+
+  .royal-team-card:nth-child(5) {
+    transform: translateX(90px) rotate(10deg);
+  }
+
+  /* 🔥 text full width नीचे आए */
+  .royal-landing-text {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+
+
+/* Only services css ================ */
+/* ===== REGAL SERVICES (UNIQUE) ===== */
+
+.regal-services-section {
+  width: 100%;
+  padding: 100px 20px;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.regal-services-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.regal-services-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.regal-services-subtitle {
+  color: #aaa;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+.regal-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.regal-service-card {
+  position: relative;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.regal-service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+}
+
+/* OVERLAY */
+.regal-service-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.2)
+  );
+  transition: 0.4s;
+}
+
+/* TEXT */
+.regal-service-overlay h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.regal-service-overlay p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* HOVER EFFECT 🔥 */
+.regal-service-card:hover img {
+  transform: scale(1.1);
+}
+
+.regal-service-card:hover .regal-service-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.3)
+  );
+}
+
+
+
+
+
+
+
+/* only for about section =========================== */
+
+/* ================= SECTION ================= */
+
+.rr-about-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;              /* ✅ center content vertically */
+  align-items: center;        /* ✅ vertical center */
+}
+
+
+/* ================= CONTENT ================= */
+
+.rr-about-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+
+  display: flex;
+  align-items: center;        /* ✅ text + image vertically align */
+  justify-content: space-between; /* ✅ left-right push */
+
+  gap: 50px;
+}
+
+
+/* REVERSE SUPPORT */
+.rr-about-content.reverse {
+  flex-direction: row-reverse; /* ✅ image right, text left */
+}
+
+
+/* ================= IMAGE ================= */
+
+.rr-about-image {
+  width: 55%;                 /* ✅ control width (not too big) */
+  height: 80vh;               /* ✅ fit inside screen (not overflow) */
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+  transition: 0.5s ease;
+
+  align-self: center;         /* ✅ prevent upar/niche shift */
+}
+
+
+/* HOVER EFFECT */
+.rr-about-image:hover {
+  transform: scale(1.03);
+}
+
+
+/* ================= TEXT ================= */
+
+.rr-about-text {
+  width: 45%;                 /* ✅ left side fixed */
+
+  padding: 40px;
+  border-radius: 20px;
+
+  /* 🔥 GLASS EFFECT */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+
+  display: flex;              /* ✅ content alignment */
+  flex-direction: column;
+  justify-content: center;    /* ✅ vertically center text */
+}
+
+
+/* HEADING */
+.rr-about-text h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+/* DYNAMIC TITLE */
+.rr-about-title {
+  font-size: 24px;
+  color: #ffd700;
+  margin: 15px 0;
+}
+
+/* DESCRIPTION */
+.rr-about-desc {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+
+/* ================= ANIMATION ================= */
+
+.rr-about-image,
+.rr-about-title,
+.rr-about-desc {
+  animation: rrFade 0.8s ease;
+}
+
+@keyframes rrFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Only Plans Section css ================================ */
+
+
+
+/* make this section vertical */
+.royal-landing-content.column {
+  flex-direction: column;
+  align-items: right;
+  gap: 40px;
+}
+
+/* center text */
+.royal-landing-text.center {
+  text-align: center;
+}
+
+/* fix plans spacing */
+.plans-wrapper-inside {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}

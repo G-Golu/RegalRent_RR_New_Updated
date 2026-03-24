@@ -1,0 +1,219 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LAYOUT */
+.admin-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* MAIN */
+.admin-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+}
+
+/* HEADER */
+.admin-header {
+  height: 60px;
+  background: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+/* CONTENT */
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* FOOTER */
+.admin-footer {
+  padding: 10px;
+  text-align: center;
+  background: #f1f5f9;
+  font-size: 14px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.inventory-mini-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.mini-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.mini-box h4 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.mini-box p {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.mini-box.available p { color: #16a34a; }
+.mini-box.rented p { color: #3b82f6; }
+.mini-box.damage p { color: #ef4444; }
+.mini-box.total p { color: #111827; }
+
+
+
+
+
+
+/*-----------------  ShopDashboardCard css ------------------- */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dash-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.dash-card h4 {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.dash-card h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.card-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  animation: grow 1s ease;
+}
+/* -------------------------MOST IMPORTANT THIS HELP FOR CREATE CATEGORY AND ADMIN SIDE ALL CARD SHOWIN FULL ---------------------- */
+.page,
+.today-summary {
+  width: 100%;
+  max-width: 100%;
+}
+/* -------------------------MOST IMPORTANT THIS HELP FOR CREATE CATEGORY AND ADMIN SIDE ALL CARD SHOWIN FULL ---------------------- */
+
+.blue .card-bar { background: #3b82f6; }
+.green .card-bar { background: #22c55e; }
+.purple .card-bar { background: #8b5cf6; }
+.orange .card-bar { background: #f97316; }
+.dark .card-bar { background: #111827; }
+
+@keyframes grow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Inventory */
+.wide {
+  grid-column: span 2;
+}
+
+.bar {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  animation: slide 1s ease;
+}
+
+.bar.green { background: #22c55e; }
+.bar.blue { background: #3b82f6; }
+.bar.red { background: #ef4444; }
+
+@keyframes slide {
+  from { width: 0; }
+}

@@ -1,0 +1,241 @@
+/* ================================
+   MAIN PAGE CONTAINER
+================================ */
+
+.transaction-page{
+padding:30px;
+background:#f1f5f9;
+min-height:100vh;
+font-family:Inter,system-ui;
+}
+
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.transaction-header{
+text-align:center;
+margin-bottom:30px;
+}
+
+.transaction-header h1{
+font-size:28px;
+font-weight:700;
+color:#0f172a;
+}
+
+.transaction-header p{
+color:#64748b;
+margin-top:6px;
+}
+
+
+/* ================================
+   SUMMARY CARDS GRID
+================================ */
+
+.summary-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+
+/* ================================
+   SUMMARY CARD DESIGN
+================================ */
+
+.summary-card{
+padding:20px;
+border-radius:14px;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.summary-card:hover{
+transform:translateY(-4px);
+}
+
+.summary-card p{
+font-size:14px;
+opacity:0.9;
+}
+
+.summary-card h2{
+font-size:26px;
+margin-top:6px;
+font-weight:700;
+}
+
+
+/* ================================
+   CARD COLORS
+================================ */
+
+.revenue{
+background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.pending{
+background:linear-gradient(135deg,#f59e0b,#d97706);
+}
+
+.refund{
+background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+.orders{
+background:linear-gradient(135deg,#10b981,#059669);
+}
+
+
+/* ================================
+   CHART GRID LAYOUT
+================================ */
+
+.charts-grid{
+display:grid;
+
+/* Left chart bigger, right smaller */
+
+grid-template-columns: 2fr 1fr;
+
+gap:20px;
+margin-bottom:30px;
+}
+
+
+/* ================================
+   RIGHT SIDE SMALL CHART STACK
+================================ */
+
+.small-charts{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+
+/* ================================
+   CHART CARD
+================================ */
+
+.chart-card{
+background:white;
+border-radius:14px;
+padding:20px;
+box-shadow:0 8px 24px rgba(15,23,42,0.06);
+}
+
+
+/* chart title */
+
+.chart-card h3{
+margin-bottom:12px;
+color:#0f172a;
+}
+
+
+/* ================================
+   CHART SIZE CONTROL
+================================ */
+
+/* BIG CHART */
+
+.big-chart{
+height:360px;
+}
+
+/* SMALL CHART */
+
+.small-chart{
+height:230px;
+}
+
+
+/* ================================
+   CHART WRAPPER
+================================ */
+
+.chart-wrapper{
+width:100%;
+height:100%;
+}
+
+
+/* ================================
+   TABLE DESIGN
+================================ */
+
+.transaction-table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:12px;
+overflow:hidden;
+}
+
+.transaction-table th{
+background:#f1f5f9;
+padding:12px;
+font-size:13px;
+text-align:left;
+}
+
+.transaction-table td{
+padding:12px;
+border-bottom:1px solid #e5e7eb;
+font-size:14px;
+}
+
+.transaction-table tr:hover{
+background:#f8fafc;
+}
+/* ================================
+   FIX CHART OVERFLOW
+================================ */
+
+.chart-card{
+overflow:hidden;
+}
+
+.recharts-wrapper{
+font-size:13px;
+}
+
+.recharts-cartesian-axis-tick-value{
+fill:#475569;
+}
+
+/* give charts proper height */
+
+.chart-card .recharts-responsive-container{
+width:100% !important;
+height:280px !important;
+}
+
+/* prevent axis text clipping */
+
+.recharts-cartesian-axis{
+overflow:visible;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media(max-width:900px){
+
+.charts-grid{
+grid-template-columns:1fr;
+}
+
+.small-charts{
+flex-direction:column;
+}
+
+}

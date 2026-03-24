@@ -1,0 +1,109 @@
+/* ================= ROOT ================= */
+.stafflist-page {
+  padding: 30px;
+  background: #f6f8fb;
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+/* ================= CARD ================= */
+.stafflist-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.stafflist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.stafflist-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ================= SEARCH ================= */
+.stafflist-search {
+  width: 280px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.stafflist-search:focus {
+  border-color: #3b82f6;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* ================= TABLE BOX ================= */
+.stafflist-table-box {
+  padding: 20px;
+}
+
+/* ================= TABLE ================= */
+.stafflist-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* ✅ prevents overflow */
+}
+
+/* ================= HEADER ================= */
+.stafflist-table thead tr {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.stafflist-table th {
+  color: #fff;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ================= BODY ================= */
+.stafflist-table td {
+  padding: 14px;
+  font-size: 14px;
+  text-align: center;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* ================= ROW EFFECT ================= */
+.stafflist-table tbody tr:nth-child(even) {
+  background: #f9fbff;
+}
+
+.stafflist-table tbody tr:hover {
+  background: #eef4ff;
+  transition: 0.2s;
+}
+
+/* ================= TEXT ================= */
+.stafflist-table td:nth-child(3) {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.stafflist-table td:nth-child(4) {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+/* ================= EMPTY ================= */
+.stafflist-table .loading-text,
+.stafflist-table .no-data {
+  padding: 30px;
+  color: #94a3b8;
+}

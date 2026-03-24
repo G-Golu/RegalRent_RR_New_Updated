@@ -1,0 +1,313 @@
+/* ===============================
+   RECEIPT WRAPPER
+================================*/
+.receipt-wrapper {
+  background: #eef1f5;
+  padding: 40px 20px 140px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ===============================
+   RECEIPT CARD
+================================*/
+.receipt-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 190mm;
+  padding: 32px 36px;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  page-break-inside: avoid;
+   box-sizing: border-box; 
+}
+.receipt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 28px;
+  font-size: 13px;
+  table-layout: fixed;
+
+}
+
+/* ===============================
+   HEADER
+================================*/
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1.5px solid #1f2937;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+}
+
+.shop-details img {
+  height: 58px;
+  margin-bottom: 6px;
+}
+
+.shop-details h2 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.shop-details p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.invoice-details {
+  text-align: right;
+}
+
+.invoice-details h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.invoice-details p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===============================
+   BILL TO
+================================*/
+.bill-to {
+  background: #f1f5f9;
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  border-left: 4px solid #1f2937;
+}
+
+.bill-to p {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* ===============================
+   TABLE
+================================*/
+.receipt-table{
+  width:100%;
+  border-collapse: collapse;
+  margin-bottom: 28px;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+/* IMPORTANT FIX */
+.receipt-table thead{
+  display: table-header-group;
+}
+
+.receipt-table th,
+.receipt-table td{
+  box-sizing:border-box;
+}
+
+
+/* HEADER */
+.receipt-table thead th {
+  background: #1f2937;
+  color: #ffffff;
+padding: 8px 4px; /* padding kam */
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+   white-space: normal;
+   word-break: break-word;
+  text-transform: uppercase;
+  /* white-space: nowrap; */
+    letter-spacing: 0px;
+ 
+}
+
+.receipt-card{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+
+/* HEADER CORNERS */
+.receipt-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.receipt-table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+/* BODY CELLS */
+.receipt-table tbody td {
+  padding: 8px 6px; /* padding reduce */
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+/* ROW BACKGROUND */
+.receipt-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+/* PRODUCT COLUMN ALIGN */
+.receipt-table td:nth-child(2) {
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+.receipt-container{
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+
+/* ===============================
+   SUMMARY
+================================*/
+.receipt-summary {
+  width: 380px;
+  margin-left: auto;
+  margin-top: 20px;
+  background: #f8fafc;
+  padding: 18px 22px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.receipt-summary div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.receipt-summary div span:first-child {
+  color: #555;
+}
+
+.receipt-summary .total {
+  border-top: 2px solid #111;
+  padding-top: 12px;
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.receipt-summary .total span:last-child {
+  color: #0a58ff;
+}
+
+/* ===============================
+   FOOTER
+================================*/
+.receipt-footer {
+  text-align: center;
+  margin-top: 38px;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px dashed #ccc;
+  padding-top: 14px;
+}
+
+/* ===============================
+   PAGE ACTION BUTTONS
+================================*/
+.page-actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -3px 10px rgba(0,0,0,0.05);
+  z-index: 9999;
+}
+
+.page-actions button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.download-btn {
+  background: #0a58ff;
+  color: #fff;
+}
+
+.download-btn:hover {
+  background: #0844c7;
+}
+
+.my-orders-btn {
+  background: #111827;
+  color: #fff;
+}
+
+.my-orders-btn:hover {
+  background: #000;
+}
+
+/* ===============================
+   PRINT SETTINGS
+================================*/
+@media print {
+
+  .page-actions {
+    display: none !important;
+  }
+
+  .receipt-wrapper {
+    background: white;
+    padding: 0;
+  }
+
+  .receipt-card {
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+.receipt-table th:nth-child(1),
+.receipt-table td:nth-child(1){width:9%;}
+
+.receipt-table th:nth-child(2),
+.receipt-table td:nth-child(2){width:12%;}
+
+.receipt-table th:nth-child(3),
+.receipt-table td:nth-child(3){width:12%;}
+
+.receipt-table th:nth-child(4),
+.receipt-table td:nth-child(4){width:9%;}
+
+.receipt-table th:nth-child(5),
+.receipt-table td:nth-child(5){width:30%;}
+
+.receipt-table th:nth-child(6),
+.receipt-table td:nth-child(6){width:24%;}

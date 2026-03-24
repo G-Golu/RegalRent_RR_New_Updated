@@ -1,0 +1,115 @@
+/* Main Container */
+.pricing-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Title */
+.pricing-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.pricing-subtitle {
+  color: #777;
+  margin-bottom: 50px;
+}
+
+/* Cards Layout */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Card Style */
+.pricing-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Popular Card */
+.popular {
+  border: 2px solid #4caf50;
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Price */
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.price span {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Features */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  color: #555;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.primary-btn {
+  background: #4caf50;
+}
+
+.primary-btn:hover {
+  background: #45a049;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

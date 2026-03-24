@@ -1,0 +1,265 @@
+.return-page {
+  background: #f4f6f9;
+  min-height: 100vh;
+  padding: 40px 20px;
+  margin-left: 250px;
+}
+
+.return-container {
+  max-width: 950px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.return-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f1f3f6;
+  padding-bottom: 12px;
+}
+
+/* Section Titles */
+.return-container h3 {
+  margin-top: 30px;
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* ================= TABLE ================= */
+.product-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  
+}
+
+.product-table th {
+  background: #f8fafc;
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  border-bottom: 1px solid #e5e7eb;
+ 
+}
+
+.product-table td {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.product-table tr:hover {
+  background: #f9fbff;
+  transition: 0.2s ease;
+}
+
+/* ================= INPUTS ================= */
+.customer-form input,
+.return-section select,
+.return-section textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.customer-form input:disabled {
+  background: #f1f5f9;
+  color: #555;
+  font-weight: 500;
+}
+
+.return-section textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* ================= REFUND ================= */
+.refund-section label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.refund-section input {
+  margin-right: 8px;
+}
+
+/* ================= SUMMARY ================= */
+.return-summary {
+  background: #f8fbff;
+  padding: 22px;
+  border-radius: 14px;
+  margin-top: 30px;
+  border: 1px solid #e3e8f0;
+}
+
+.return-summary p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.return-summary strong {
+  font-size: 18px;
+  color: #2f6fed;
+}
+
+/* ================= BUTTON ================= */
+.submit-return-btn {
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, #2f6fed, #1f56c5);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-return-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.submit-return-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .return-page {
+    margin-left: 0;
+    padding: 20px 10px;
+  }
+
+  .return-container {
+    padding: 25px;
+  }
+
+  .product-table table {
+    font-size: 12px;
+  }
+}
+
+
+
+/* ================= BOTTOM SECTION ================= */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* ================= REFUND CARDS ================= */
+.refund-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.refund-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.refund-card:hover {
+  border-color: #2f6fed;
+  background: #f4f8ff;
+}
+
+.refund-card.active {
+  border: 2px solid #2f6fed;
+  background: #eef4ff;
+}
+
+.refund-card input {
+  margin-top: 5px;
+}
+
+.refund-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.refund-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= SUMMARY ================= */
+.return-summary {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 16px;
+  color: #2f6fed;
+}
+
+/* ================= BUTTON ================= */
+.submit-return-btn {
+  margin-top: 30px;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, #2f6fed, #1f56c5);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-return-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}

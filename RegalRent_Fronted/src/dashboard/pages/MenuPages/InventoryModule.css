@@ -1,0 +1,317 @@
+/* ================= MAIN CONTAINER ================= */
+
+.inventory-container{
+  padding:40px;
+  background:#f1f5f9;
+  min-height:100vh;
+  font-family:"Inter",sans-serif;
+  overflow-x:hidden;
+}
+
+
+/* ================= HEADER ================= */
+
+.inventory-container .inventory-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.inventory-container .inventory-header h2{
+  font-size:26px;
+  font-weight:700;
+  color:#111827;
+}
+
+.inventory-container .primary-btn{
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+
+.inventory-container .primary-btn:hover{
+  background:#1d4ed8;
+}
+
+
+/* ================= SUMMARY GRID ================= */
+
+.inventory-container .summary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+  margin-bottom:50px;
+}
+
+
+/* ================= SUMMARY CARD ================= */
+
+.inventory-container .summary-card{
+  position:relative;
+  padding:26px;
+  border-radius:16px;
+  color:#fff;
+  overflow:hidden;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.inventory-container .summary-card h4{
+  font-size:13px;
+  font-weight:600;
+  opacity:.9;
+  margin-bottom:10px;
+  letter-spacing:.5px;
+}
+
+.inventory-container .summary-card p{
+  font-size:32px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.inventory-container .summary-card::after{
+  content:"";
+  position:absolute;
+  left:26px;
+  bottom:36px;
+  width:70%;
+  height:3px;
+  background:rgba(255,255,255,0.35);
+  border-radius:10px;
+}
+
+.inventory-container .summary-card::before{
+  content:"";
+  position:absolute;
+  left:26px;
+  bottom:36px;
+  width:35%;
+  height:3px;
+  background:#fff;
+  border-radius:10px;
+}
+
+
+/* ================= CARD COLORS ================= */
+
+.inventory-container .summary-grid .summary-card:nth-child(1){
+  background:linear-gradient(135deg,#0ea5a4,#14b8a6);
+}
+
+.inventory-container .summary-grid .summary-card:nth-child(2){
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.inventory-container .summary-grid .summary-card:nth-child(3){
+  background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+}
+
+.inventory-container .summary-grid .summary-card:nth-child(4){
+  background:#2f3640;
+}
+
+.inventory-container .summary-grid .summary-card:nth-child(5){
+  background:linear-gradient(135deg,#f59e0b,#d97706);
+}
+
+.inventory-container .summary-grid .summary-card:nth-child(6){
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+
+/* ================= FILTER CONTROLS ================= */
+
+.inventory-container .inventory-controls{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:25px;
+  flex-wrap:wrap;
+}
+
+.inventory-container .inventory-controls input{
+  width:220px;
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #e2e8f0;
+  font-size:14px;
+}
+
+.inventory-container .inventory-controls select{
+  width:160px;
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid #e2e8f0;
+  background:white;
+  font-size:14px;
+}
+
+
+/* ================= TABLE ================= */
+
+.inventory-container .table-wrapper{
+  background:white;
+  border-radius:16px;
+  overflow-x:auto;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.inventory-container .inventory-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.inventory-container .inventory-table th,
+.inventory-container .inventory-table td{
+  padding:14px 16px;
+  text-align:left;
+}
+
+.inventory-container .inventory-table th{
+  background:#f8fafc;
+  font-size:13px;
+  color:#475569;
+  font-weight:600;
+}
+
+.inventory-container .inventory-table tr{
+  border-bottom:1px solid #e2e8f0;
+}
+
+.inventory-container .inventory-table tr:hover{
+  background:#f9fafb;
+}
+
+
+/* ================= STATUS BADGES ================= */
+
+.inventory-container .badge{
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.inventory-container .badge.success{
+  background:#dcfce7;
+  color:#16a34a;
+}
+
+.inventory-container .badge.warning{
+  background:#fef3c7;
+  color:#d97706;
+}
+
+.inventory-container .badge.danger{
+  background:#fee2e2;
+  color:#dc2626;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.inventory-container .link-btn{
+  background:none;
+  border:none;
+  color:#2563eb;
+  cursor:pointer;
+  margin-right:8px;
+  font-weight:500;
+}
+
+.inventory-container .link-btn.danger{
+  color:#dc2626;
+}
+
+
+/* ================= CHART SECTION ================= */
+
+.inventory-container .charts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+  gap:25px;
+  margin-bottom:35px;
+}
+
+.inventory-container .chart-card{
+  width:100%;
+  background:white;
+  padding:24px 26px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+  border:1px solid #eef2f7;
+  transition:0.25s;
+}
+
+.inventory-container .chart-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.08);
+}
+
+.inventory-container .chart-card h3{
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:20px;
+  color:#1e293b;
+}
+
+
+/* ================= FINANCE CARDS ================= */
+
+.inventory-container .finance-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-bottom:40px;
+}
+
+.inventory-container .finance-card{
+  background:#f8fafc;
+  padding:22px 26px;
+  border-radius:16px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:0.25s;
+}
+
+.inventory-container .finance-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.inventory-container .finance-card h4{
+  font-size:14px;
+  color:#64748b;
+  font-weight:500;
+  margin-bottom:8px;
+}
+
+.inventory-container .finance-card p{
+  font-size:26px;
+  font-weight:700;
+  color:#111827;
+}
+
+.inventory-container .amount-green{ color:#16a34a; }
+.inventory-container .amount-red{ color:#dc2626; }
+.inventory-container .amount-dark{ color:#111827; }
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width:900px){
+
+  .inventory-container .charts-grid{
+    grid-template-columns:1fr;
+  }
+
+  .inventory-container .summary-grid{
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  }
+
+}

@@ -1,0 +1,290 @@
+.dashboard-container{
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.dashboard-box{
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+width:100%;
+}
+
+.dashboard-header{
+margin-bottom:10px;
+}
+
+
+/* today added css for container a and b 12-03-2026 */
+/* ===== DASHBOARD USER STATS CONTAINER ===== */
+
+/* GRID */
+
+.dashboard-user-stats-grid{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+
+/* CARD */
+/* ============================= */
+/* DASHBOARD CARDS - MODERN UI */
+/* ============================= */
+
+.dashboard-user-card-new{
+  width:260px;
+  min-height:120px;
+  padding:20px;
+  border-radius:12px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+  transition:all .25s ease;
+}
+
+/* hover */
+.dashboard-user-card-new:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+}
+
+/* HEADER */
+
+.dashboard-user-card-header{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.dashboard-user-card-header span{
+  font-size:14px;
+  opacity:.9;
+}
+
+.dashboard-user-card-header strong{
+  font-size:28px;
+  font-weight:700;
+  color:#fff;
+}
+
+
+/* STATUS */
+
+.dashboard-user-status{
+  font-size:13px;
+  margin-top:3px;
+}
+
+.dashboard-user-status.active{
+  color:#d1fae5;
+}
+
+.dashboard-user-status.inactive{
+  color:#fee2e2;
+}
+
+
+/* ============================= */
+/* ICON STYLE */
+/* ============================= */
+
+.dashboard-user-card-new::before{
+  content:"";
+  position:absolute;
+  right:20px;
+  top:18px;
+  width:34px;
+  height:34px;
+  opacity:0.35;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+
+/* ============================= */
+/* CARD COLORS */
+/* ============================= */
+
+/* ADMINS */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(1){
+  background:linear-gradient(135deg,#6366F1,#4F46E5);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(1)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
+}
+
+
+/* SHOP ADMINS */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(2){
+  background:linear-gradient(135deg,#EC4899,#F43F5E);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(2)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/847/847969.png");
+}
+
+
+/* USERS */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(3){
+  background:linear-gradient(135deg,#F59E0B,#FB923C);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(3)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/1077/1077114.png");
+}
+
+
+/* PRODUCTS */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(4){
+  background:linear-gradient(135deg,#06B6D4,#0891B2);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(4)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/1170/1170678.png");
+}
+
+
+/* CATEGORY */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(5){
+  background:linear-gradient(135deg,#10B981,#059669);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(5)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/3524/3524636.png");
+}
+
+
+/* SUB CATEGORY */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(6){
+  background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(6)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/2331/2331941.png");
+}
+
+
+/* ORDERS */
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(7){
+  background:linear-gradient(135deg,#F97316,#EA580C);
+}
+
+.dashboard-user-stats-grid 
+.dashboard-user-card-new:nth-child(7)::before{
+  background-image:url("https://cdn-icons-png.flaticon.com/512/3144/3144456.png");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DASHBOARD BOX */
+
+.dashboard-box {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.dashboard-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+
+/* TITLE */
+
+.dashboard-box h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  border-left: 5px solid #6366F1;
+  padding-left: 10px;
+}
+
+
+/* CHART CONTAINER */
+
+.recharts-responsive-container {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+/* TOOLTIP */
+
+.recharts-default-tooltip {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* LEGEND */
+
+.recharts-legend-item-text {
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+
+/* PIE LABEL */
+
+.recharts-pie-label-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* BAR HOVER EFFECT */
+
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

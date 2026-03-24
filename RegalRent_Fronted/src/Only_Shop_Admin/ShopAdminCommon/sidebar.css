@@ -1,0 +1,162 @@
+/* ================= ROOT ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Calibri, "Segoe UI", Candara, Arial, sans-serif;
+  background: #f8fafc;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1200;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #020617;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: fixed;
+  top: 72px; /* same as header height */
+  left: 0;
+  width: 260px; /* adjust width if needed */
+  height: calc(100vh - 72px); /* fill below header */
+  background: linear-gradient(180deg, #0f172a, #020617);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+}
+
+/* LOGO */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.logo-box img {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.menu-item {
+  position: relative;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.menu-item:hover {
+  background: rgba(99, 102, 241, 0.14);
+  color: #ffffff;
+}
+
+/* ACTIVE MENU */
+.menu-item.active {
+  background: rgba(99, 102, 241, 0.22);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 12%;
+  height: 76%;
+  width: 4px;
+  border-radius: 4px;
+  background: #6366f1;
+}
+
+/* SIDEBAR FOOTER */
+.sidebar-footer {
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid #1f2937;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+  margin-left: 260px;
+  margin-top: 64px;
+  padding: 24px;
+  min-height: calc(100vh - 64px);
+  background: #f8fafc;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+.logout-link {
+  color: #ef4444;
+}
+
+.logout-link:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+
+/*  Icon space-------- */
+
+/* Sidebar icon spacing */
+.sidebar .menu-item .icon {
+  width: 20px;        /* optional: keep all icons same width */
+  height: 20px;
+  margin-right: 12px; /* space between icon and text */
+  vertical-align: middle; /* align icon with text */
+}

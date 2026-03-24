@@ -1,0 +1,202 @@
+/* ================= PAGE ================= */
+
+.page.today-summary{
+  width:100%;
+  max-width:1200px;
+  min-height:100vh;
+  background:#f8fafc;
+  padding:20px 20px;  /*-- top par jane ke liye --*/
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  margin:auto;
+  transform: translateX(-15px);   /*-- is se left jayega --*/
+}
+/* ================= TITLE ================= */
+
+
+.page-title{
+  font-size:26px;
+  font-weight:800;
+  color:#0f172a;
+  margin-bottom:2px;   /* 5px se kam */
+  text-align:center;
+}
+
+.subtitle{
+  color:#64748b;
+  margin-bottom:12px;   /* 30px → 12px */
+  font-size:14px;
+  text-align:center;
+}
+
+/* ================= FORM CARD ================= */
+
+.form-card{
+  background:#fff;
+  border-radius:14px;
+  padding:30px;
+
+  width:100%;
+  max-width:1100px;   /* 1800px hatao */
+
+  margin:0 auto 40px auto;
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* ================= FORM GROUP ================= */
+
+.form-group{
+  width:100%;
+  max-width:1100px;
+  margin-bottom:16px;
+}
+
+/* LABEL */
+
+label{
+  font-size:14px;
+  margin-bottom:6px;
+  display:block;
+}
+
+/* INPUTS */
+
+input,
+select{
+  width:100%;
+  padding:11px 14px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  font-size:14px;
+}
+
+input:focus,
+select:focus{
+  outline:none;
+  border-color:#4f46e5;
+}
+
+/* ================= IMAGE PREVIEW ================= */
+
+.image-preview{
+  margin:15px 0;
+  text-align:center;
+}
+
+.image-preview img{
+  width:120px;
+  height:120px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* ================= BUTTON ================= */
+
+.save-btn{
+  width:200px;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:#4f46e5;
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+
+  align-self: flex-start;   /* 👈 button left chala jayega */
+}
+
+.save-btn:hover{
+  background:#4338ca;
+}
+
+/* ================= GRID ================= */
+
+.product-grid{
+  width:100%;
+  max-width:1100px;   /* 1800px hatao */
+
+  margin:0 auto;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit,240px);
+  gap:25px;
+  justify-content:center;
+}
+
+/* ================= CARD ================= */
+
+.product-card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.2s;
+}
+
+.product-card:hover{
+  transform:translateY(-5px);
+}
+
+.product-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.product-info{
+  padding:15px;
+  text-align:center;
+}
+
+.product-info h3{
+  font-size:16px;
+  margin-bottom:6px;
+}
+
+.product-info p{
+  font-size:14px;
+}
+
+.product-info .date{
+  font-size:12px;
+  color:#64748b;
+}
+
+/* ================= EMPTY ================= */
+
+.empty-text{
+  text-align:center;
+  color:#94a3b8;
+}
+
+
+
+
+/* new added css for updated today is : 18-03-2026 */
+
+
+.product-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}

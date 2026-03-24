@@ -1,0 +1,6 @@
+.env
+node_modules/
+dist/
+build/
+RegalRent_Fronted/public/videos/
+*.mp4

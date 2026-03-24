@@ -1,0 +1,224 @@
+/* ================= PAGE ================= */
+
+.page.subscription-page{
+  width:100%;
+  max-width:1400px;
+
+  margin:0;          /* 👈 auto hata diya */
+  padding:20px;
+}
+
+/* ================= TITLE ================= */
+
+.page-title{
+  font-size:30px;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:30px;
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+  background:#ffffff;
+  border-radius:16px;
+  padding:30px;
+  margin-bottom:35px;
+
+  width:100%;
+  max-width:1100px;
+
+  margin-left:0;   /* 👈 auto hata diya */
+  margin-right:0;  /* 👈 auto hata diya */
+
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+
+/* ================= FORM CARD ================= */
+.form-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* 👈 sab left */
+}
+
+.form-card h2{
+  margin-bottom:20px;
+  font-size:20px;
+  font-weight:600;
+   align-items:flex-start; 
+}
+
+
+/* ================= FORM GRID ================= */
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  width:100%;          /* 👈 important */
+}
+
+
+/* ================= FORM GROUP ================= */
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group label{
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+
+/* ================= INPUT ================= */
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #dcdcdc;
+  font-size:14px;
+  transition:0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:#6c63ff;
+}
+
+
+/* textarea full width */
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+
+/* ================= BUTTON ================= */
+
+.save-btn{
+  width:200px;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#4f46e5;
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.save-btn:hover{
+  background:#4338ca;
+}
+
+
+/* ================= TABLE CARD ================= */
+
+.table-card{
+  max-width:1100px;
+}
+
+.table-card h2{
+  margin-bottom:20px;
+}
+
+
+/* ================= TABLE ================= */
+
+.data-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.data-table th{
+  background:#f1f5f9;
+  padding:12px;
+  text-align:left;
+  font-weight:600;
+}
+
+.data-table td{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.data-table tbody tr:hover{
+  background:#f9fafb;
+}
+
+
+/* ================= BADGE ================= */
+
+.badge{
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.badge-green{
+  background:#dcfce7;
+  color:#166534;
+}
+
+.badge-red{
+  background:#fee2e2;
+  color:#991b1b;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.actions{
+  display:flex;
+  gap:10px;
+}
+
+.actions button{
+  padding:7px 14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+}
+
+/* edit */
+
+.edit-btn{
+  background:#facc15;
+  color:#78350f;
+}
+
+.edit-btn:hover{
+  background:#f59e0b;
+}
+
+/* enable disable */
+
+.status-btn{
+  background:#ef4444;
+  color:white;
+}
+
+.status-btn:hover{
+  background:#dc2626;
+}
+
+
+/* ================= EMPTY ================= */
+
+.empty-text{
+  text-align:center;
+  color:#94a3b8;
+  padding:15px;
+}
+

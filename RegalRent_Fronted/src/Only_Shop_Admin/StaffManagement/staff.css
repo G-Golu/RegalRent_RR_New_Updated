@@ -1,0 +1,181 @@
+/* ================= PAGE ================= */
+.staffmgmt-page {
+  padding: 30px;
+  margin-left: 260px;
+  background: #f6f8fb;
+  min-height: 100vh;
+}
+
+/* ================= CARD ================= */
+.staffmgmt-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+/* ================= TITLE ================= */
+.staffmgmt-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1e293b;
+}
+
+/* ================= FORM (FIXED ALIGNMENT) ================= */
+.staffmgmt-form {
+  display: flex;
+  align-items: flex-end; /* ✅ aligns button with inputs */
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* ================= GROUP ================= */
+.staffmgmt-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  flex: 1;
+}
+
+.staffmgmt-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.staffmgmt-group input {
+  height: 42px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+.staffmgmt-group input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* ================= BUTTON (FIXED POSITION) ================= */
+.staffmgmt-submit {
+  height: 42px;              /* ✅ same as input */
+  padding: 0 20px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.25s;
+  white-space: nowrap;
+}
+
+.staffmgmt-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(59,130,246,0.25);
+}
+
+/* ================= TABLE BOX ================= */
+.staffmgmt-table-box {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #eef1f6;
+}
+
+/* ================= TABLE ================= */
+.staffmgmt-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* HEADER */
+.staffmgmt-table thead tr {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.staffmgmt-table th {
+  padding: 14px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* BODY */
+.staffmgmt-table td {
+  padding: 14px;
+  font-size: 14px;
+  text-align: center;
+  color: #475569;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* ROW EFFECT */
+.staffmgmt-table tbody tr:nth-child(even) {
+  background: #f9fbff;
+}
+
+.staffmgmt-table tbody tr:hover {
+  background: #eef4ff;
+  transition: 0.2s;
+}
+
+/* ================= ACTION BUTTONS (FIXED) ================= */
+.staffmgmt-action {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Edit */
+.staffmgmt-edit {
+  background: #f59e0b;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.staffmgmt-edit:hover {
+  background: #d97706;
+}
+
+/* Delete */
+.staffmgmt-delete {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.staffmgmt-delete:hover {
+  background: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .staffmgmt-page {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .staffmgmt-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .staffmgmt-submit {
+    width: 100%;
+  }
+}

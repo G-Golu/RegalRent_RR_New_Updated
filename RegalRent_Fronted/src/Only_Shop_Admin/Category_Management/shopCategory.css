@@ -1,0 +1,228 @@
+/* ================== Page ================== */
+.page {
+  padding: 40px 50px;
+  background: #f1f5f9;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /*  THIS FIXES SIDE SHIFT */
+}
+
+/* ================== Title ================== */
+.page-title {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0f172a;
+  
+}
+
+/* ================== Form Card ================== */
+.form-card.big {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+
+  width: 100%;
+  max-width: 1100px;   /*  increased width */
+  margin-bottom: 30px;
+
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+}
+
+/* ================== FORM GRID ================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* ================== Inputs ================== */
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  background: #ffffff;
+  transition: 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.15);
+}
+
+input[type="file"] {
+  padding: 9px;
+  border: 1px dashed #c7d2fe;
+  background: #f8fafc;
+}
+
+/* ================== Buttons ================== */
+.btn {
+  height: 40px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Edit Button - Premium Look */
+.btn-edit {
+  background: #0008f9;
+  color: #fafafa;
+  border: 1px solid #ffffff;
+}
+
+.btn-edit:hover {
+  background: #181040;
+  border-color: #08387c;
+}
+
+/* Enable */
+.btn-enable {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-enable:hover {
+  background: #15803d;
+}
+
+/* Deactivate */
+.btn-deactive {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-deactive:hover {
+  background: #dc2626;
+
+}
+
+/* Button base */
+.btn {
+  height: 40px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Space between buttons */
+.btn + .btn {
+  margin-left: 10px;
+}
+
+
+/* ================== Output Card ================== */
+.output-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 1100px;  /*  increased */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+
+  overflow: hidden;   /*  removed horizontal scroll */
+}
+
+/* ================== Table ================== */
+.category-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.category-table th,
+.category-table td {
+  padding: 18px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.category-table tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.category-table tr:hover {
+  background: #f8fafc;
+}
+
+/* Image */
+.category-table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+/* ================== Status ================== */
+
+.status-active,
+.status-deactive {
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Active */
+.status-active {
+  color: #16a34a;
+}
+
+/* Deactive */
+.status-deactive {
+  color: #dc2626;
+}
+/* ================== Action Column ================== */
+.category-table td:last-child {
+  white-space: nowrap;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card.big,
+.output-card {
+  width: 100%;
+  max-width: 1100px;   /* SAME WIDTH */
+}
+}
+
+
+
+
+
+/* ================== Table Header ================== */
+.category-table thead th {
+  background: #f8fafc;
+  font-weight: 600;
+  font-size: 14px;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

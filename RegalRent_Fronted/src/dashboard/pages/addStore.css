@@ -1,0 +1,651 @@
+/* ================= PAGE ================= */
+/* ===== FORCE FULL WIDTH LAYOUT FIX ===== */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* If using layout wrapper */
+.app,
+.layout,
+.main-content,
+.content-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.page h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+/* ================= FORM CARD ================= */
+.qs-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  /* ✅ FORM WIDTH CONTROL */
+  max-width: 900px;     /* Increase form width */
+  width: 100%;
+  margin: 0 auto 40px auto;
+}
+
+.qs-card h3 {
+  margin-bottom: 20px;
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+
+/* ================= FORM GRID ================= */
+.form-grid {
+  display: grid;
+
+  /* ✅ BETTER RESPONSIVE GRID */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #6c63ff;
+}
+
+
+/* ================= CATEGORY ================= */
+.category-select {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.category-input {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-dropdown {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 6px;
+  max-height: 250px;  /* ✅ Increased height */
+  overflow-y: auto;
+  z-index: 10;
+  padding: 12px;
+}
+
+.category-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+
+/* ================= FOOTER ================= */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-footer input[type="file"] {
+  flex: 1;
+  min-width: 200px;
+}
+
+.primary {
+  background: #6c63ff;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.primary:hover {
+  background: #5848e5;
+}
+
+
+/* ================= STORE GRID ================= */
+.profile-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+
+/* ================= STORE CARD ================= */
+/* ================= STORE CARD ================= */
+.profile-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  transition: 0.25s;
+
+  display:flex;
+  flex-direction:column;
+  min-height:420px;
+  text-align:center;
+}
+
+.profile-card:hover{
+  transform:translateY(-6px);
+}
+
+
+/* ===== CARD HEADER ===== */
+
+.profile-card::before{
+height:120px;
+  content:"";
+  width:100%;
+  height:95px;
+  background:linear-gradient(135deg,#f5e3cf,#e9d2b7);
+  display:block;
+}
+
+
+/* ================= LOGO ================= */
+
+/* ================= PROFILE IMAGE ================= */
+
+/* ================= PROFILE IMAGE ================= */
+
+.card-logo{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:50%;
+
+  display:block;
+  margin:-15px auto 15px auto;
+
+  background:white;
+  border:5px solid white;
+
+  position:relative;
+  z-index:2;
+
+  transition:0.3s;
+}
+/* ===== SILVER ===== */
+
+.profile-card.silver .card-logo{
+  box-shadow:0 0 0 4px #c0c0c0,
+             0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== GOLD ===== */
+
+.profile-card.gold .card-logo{
+  box-shadow:0 0 0 4px #d4af37,
+             0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== PLATINUM ===== */
+
+.profile-card.platinum .card-logo{
+  box-shadow:0 0 0 4px #6b7280,
+             0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ===== PLATINUM PRO ===== */
+
+.profile-card.platinum-pro .card-logo{
+  box-shadow:0 0 0 4px #111827,
+             0 6px 14px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* glowing effect */
+
+.profile-card.gold .card-logo{
+  box-shadow:
+  0 0 0 4px #d4af37,
+  0 0 12px rgba(212,175,55,0.6);
+}
+
+.profile-card.platinum-pro .card-logo{
+  box-shadow:
+  0 0 0 4px #111827,
+  0 0 12px rgba(0,0,0,0.5);
+}
+
+/* ================= STORE INFO ================= */
+
+.store-name{
+  font-weight:600;
+  font-size:19px;
+  color:#8b3b00;
+  margin-bottom:6px;
+}
+
+.store-package{
+  font-size:15px;
+  color:#444;
+  margin-bottom:6px;
+}
+
+.store-category{
+  font-size:14px;
+  color:#666;
+  margin-bottom:10px;
+}
+
+
+/* ================= STATUS ================= */
+
+.store-expiry{
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+
+/* ================= DIVIDER ================= */
+
+.divider{
+  height:1px;
+  background:#eee;
+  margin:12px 0 15px 0;
+}
+
+
+/* ================= BANK DETAILS ================= */
+
+.bank-details{
+  font-size:14px;
+  color:#555;
+  line-height:1.7;
+  padding:0 20px 10px 20px;
+}
+
+.bank-details div{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px dashed #eee;
+  padding:4px 0;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+
+.card-actions{
+  display:flex;
+  gap:12px;
+  padding:15px 20px 20px 20px;
+  margin-top:auto;
+}
+
+.card-actions button{
+  flex:1;
+  padding:11px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:500;
+  transition:0.2s;
+}
+
+/* EDIT */
+
+.card-actions button:first-child{
+  background:#fbbf24;
+  color:white;
+}
+
+.card-actions button:first-child:hover{
+  background:#f59e0b;
+}
+
+/* DELETE */
+
+.card-actions button:last-child{
+  background:#ef4444;
+  color:white;
+}
+
+.card-actions button:last-child:hover{
+  background:#dc2626;
+}
+
+/* ================= LOGO ================= */
+.card-logo {
+  width: 100px;     /* Bigger logo */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #eee;
+  margin-bottom: 15px;
+}
+
+
+/* ================= STORE INFO ================= */
+.store-name {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.store-package,
+.store-category {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 15px 0;
+}
+
+
+/* ================= BANK DETAILS ================= */
+.bank-details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.card-actions button:first-child {
+  background: #ffb300;
+  color: white;
+}
+
+.card-actions button:first-child:hover {
+  background: #e0a000;
+}
+
+.card-actions button:last-child {
+  background: #ff5252;
+  color: white;
+}
+
+.card-actions button:last-child:hover {
+  background: #e04848;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .qs-card {
+    max-width: 100%;
+  }
+
+  .profile-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary {
+    width: 100%;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*===========06-03-2026:   today added ==========*/
+
+.page{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+  padding:20px;
+}
+
+
+.page{
+  width:100% !important;
+  max-width:none !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.profile-grid{
+  width:100% !important;
+  max-width:1200px !important;
+  margin:40px auto !important;
+}
+
+.qs-card{
+  margin:0 auto 40px auto !important;
+}
+
+
+
+/* card status css */
+.store-expiry{
+font-weight:600;
+margin-top:6px;
+}
+
+.status-active{
+color:#16a34a;
+}
+
+.status-warning{
+color:#f59e0b;
+}
+
+.status-expired{
+color:#ef4444;
+}
+
+
+
+/* today improbe css for card */
+
+
+/* ================= PACKAGE BADGE ================= */
+
+.package-badge{
+position:absolute;
+top:10px;
+right:10px;
+padding:6px 14px;
+font-size:12px;
+font-weight:600;
+border-radius:20px;
+color:white;
+letter-spacing:0.5px;
+}
+
+/* silver */
+
+.badge-silver{
+background:#c0c0c0;
+color:#333;
+}
+
+/* gold */
+
+.badge-gold{
+background:#d4af37;
+}
+
+/* platinum */
+
+.badge-platinum{
+background:#6b7280;
+}
+
+/* platinum pro */
+
+.badge-platinum-pro{
+background:#111827;
+}
+
+
+/* card header color */
+
+.profile-card.silver::before{
+background:linear-gradient(135deg,#e5e7eb,#c0c0c0);
+}
+
+.profile-card.gold::before{
+background:linear-gradient(135deg,#fcd34d,#d4af37);
+}
+
+.profile-card.platinum::before{
+background:linear-gradient(135deg,#9ca3af,#6b7280);
+}
+
+.profile-card.platinum-pro::before{
+background:linear-gradient(135deg,#374151,#111827);
+}
+
+.profile-card{
+padding-top:80px;
+}
+
+
+
+/*  Today is 18-03-2026 */
+
+/* css add new for select category dropdown option */
+
+
+
+
+/* ===== CATEGORY DROPDOWN FIX ===== */
+
+.category-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  max-height: 180px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  z-index: 100;
+}
+
+/* MAIN FIX */
+.category-row {
+  display: grid;
+  grid-template-columns: 1fr 30px; /* 🔥 fix */
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.category-row:hover {
+  background: #f5f5f5;
+}
+
+/* TEXT */
+.category-row span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* long text cut nicely */
+}
+
+/* CHECKBOX FIX RIGHT */
+.category-row input {
+  justify-self: end;  /* 🔥 always right */
+  accent-color: #2563eb;
+  cursor: pointer;
+}

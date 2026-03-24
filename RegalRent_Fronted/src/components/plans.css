@@ -1,0 +1,472 @@
+/* ===== UNIQUE ROOT (NO CONFLICT) ===== */
+/* ===== SECTION ===== */
+.rr-plans-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow */
+.rr-plans-section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+  filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* glow effect */
+.rr-plans-section::before {
+  content: "";
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 70%);
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(100px);
+}
+
+
+#plans.royal-landing-section {
+  width: 100%;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Title + Sub-Title */
+
+
+
+
+/* ===== CONTAINER ===== */
+.rr-plans-container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+/* ===== CARD ===== */
+.rr-plan-card {
+  width: 320px;
+  padding: 40px 28px;
+  border-radius: 22px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+
+  /* 🔥 PURE DARK GLASS */
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,0.9),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  transition: all 0.35s ease;
+}
+
+/* HOVER */
+.rr-plan-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,1),
+    0 0 20px rgba(255,255,255,0.05);
+}
+
+/* DEFAULT HIGHLIGHT (PRO PLAN) */
+.rr-plan-card.active {
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ===== TAG ===== */
+.rr-plan-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+  font-weight: 700;
+}
+
+/* ===== TITLE ===== */
+.rr-title {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== PRICE ===== */
+.rr-price {
+  font-size: 46px;
+  margin: 15px 0;
+  font-weight: 700;
+}
+
+.rr-plan-card h1 span {
+  font-size: 14px;
+  color: #bbb;
+}
+.rr-price span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ===== DESC ===== */
+.rr-plan-desc {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* ===== BUTTON ===== */
+.rr-plan-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.rr-plan-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* selected button */
+.rr-plan-card.selected .rr-plan-btn {
+  background: #fff;
+  color: #000;
+} 
+
+/* ===== DIVIDER ===== */
+.rr-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  margin: 25px 0;
+}
+
+/* ===== FEATURES ===== */
+.rr-plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.rr-plan-card ul li {
+  margin: 12px 0;
+  color: #ddd;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+}
+/* check icon */
+.rr-plan-card ul li::before {
+  content: "✔";
+  color: #fff;
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .rr-plans-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* ===== SECTION ===== */
+.rr-plans-section {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow background */
+.rr-plans-section::before {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255,215,0,0.12), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* ===== CONTAINER ===== */
+.rr-plans-container {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== CARD ===== */
+.rr-plan-card {
+  flex: 1 1 320px;
+  max-width: 360px;
+  padding: 45px 35px;
+  border-radius: 26px;
+  text-align: center;
+  position: relative;
+  color: #fff;
+
+  /* 🔥 GLASS */
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  /* depth */
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  transition: all 0.35s ease;
+}
+
+/* ✨ HOVER */
+.rr-plan-card:hover {
+  transform: translateY(-14px) scale(1.03);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.95),
+    0 0 20px rgba(255,255,255,0.05);
+}
+
+/* ⭐ ACTIVE (CENTER CARD) */
+.rr-plan-card.active {
+  border: 1px solid rgba(255,215,0,0.8);
+  box-shadow:
+    0 0 25px rgba(255,215,0,0.4),
+    0 0 60px rgba(255,215,0,0.2);
+}
+
+/* TAG */
+.rr-plan-tag {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: linear-gradient(135deg, #ffd700, #ffea00);
+  color: #000;
+  font-size: 10px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* TITLE */
+.rr-plan-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* PRICE */
+.rr-plan-card h1 {
+  font-size: 50px;
+  margin: 15px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.rr-plan-card h1 span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* DESC */
+.rr-plan-desc {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* BUTTON */
+.rr-plan-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ffd700, #ffea00);
+  color: #000;
+
+  transition: all 0.3s ease;
+}
+
+.rr-plan-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(255,215,0,0.5);
+}
+
+/* DIVIDER */
+.rr-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  margin: 28px 0;
+}
+
+/* FEATURES */
+.rr-plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.rr-plan-card ul li {
+  margin: 12px 0;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* check icon */
+.rr-plan-card ul li::before {
+  content: "✔";
+  color: #ffd700;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .rr-plans-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+
+/* SELECTED PLAN (click wala) */
+.rr-plan-card.selected {
+  border: 2px solid #ffd700;
+  box-shadow:
+    0 0 30px rgba(255,215,0,0.6),
+    0 0 80px rgba(255,215,0,0.3);
+  transform: scale(1.05);
+}
+
+/* selected button */
+.rr-plan-card.selected .rr-plan-btn {
+  background: #fff;
+  color: #000;
+}
+
+
+
+
+
+/*   for badge color like gold , silver , platinum...... */
+/* PLAN TYPE (Silver/Gold etc) */
+.rr-type {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Different color per type */
+.rr-plan-card:nth-child(1) .rr-type {
+  color: #c0c0c0; /* Silver */
+}
+
+.rr-plan-card:nth-child(2) .rr-type {
+  color: #ffd700; /* Gold */
+}
+
+.rr-plan-card:nth-child(3) .rr-type {
+  color: #e5e4e2; /* Platinum */
+}
+
+.rr-plan-card:nth-child(4) .rr-type {
+  color: #00eaff; /* Diamond */
+}
+
+
+
+
+/* features list ui and css only ================== */
+
+/* FEATURES LIST */
+.rr-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.rr-features li {
+  font-size: 13px;
+  color: #ccc;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* tick icon */
+.rr-features li::before {
+  content: "✔";
+  color: #ffd700;
+  font-size: 12px;
+}

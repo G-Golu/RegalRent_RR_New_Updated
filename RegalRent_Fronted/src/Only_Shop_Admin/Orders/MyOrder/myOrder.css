@@ -1,0 +1,168 @@
+/* ================= PAGE ================= */
+
+.my-order-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* ✅ Center everything */
+  padding: 15px 0px;
+  background: #f4f6fb;
+  box-sizing: border-box;
+}
+
+/* ================= HEADER ================= */
+
+.order-header {
+  width: 95%;
+  max-width: 1800px;
+  display: flex;
+  justify-content: center;   /* heading center */
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 10px 0;
+}
+
+.order-header h2 {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+  color: #01090b;
+  margin: 0;
+}
+
+/* ================= SEARCH ================= */
+
+.order-search {
+  position: absolute;   
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 240px;
+  padding: 10px 16px;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 13px;
+  outline: none;
+  transition: 0.2s ease;
+  background: #fff;
+}
+
+.order-search:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ================= TABLE WRAPPER ================= */
+
+.table-wrapper {
+  width: 80%;
+  max-width: 1800px;        /* ✅ Fixed center width */
+  margin: 0 0 0 110px;           /* ✅ Center horizontally */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  overflow-y: auto;
+  overflow-x: auto;
+  max-height: 80vh;
+}
+
+/* ================= TABLE ================= */
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+  text-align: center;       /* ✅ Center table content */
+}
+
+/* ================= HEADER ROW ================= */
+
+.order-table thead {
+  background: #172442;
+  color: #ffffff;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.order-table th {
+  padding: 14px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  text-align: center;       /* ✅ Center header text */
+}
+
+/* ================= BODY ================= */
+
+.order-table td {
+  padding: 12px 10px;
+  font-size: 13px;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+  text-align: center;       /* ✅ Center body text */
+}
+
+/* Zebra */
+.order-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Hover */
+.order-table tbody tr:hover {
+  background: #c3edde;
+  transition: 0.2s ease;
+}
+
+
+/* FULL HEADER ROW HOVER */
+.order-table thead tr:hover {
+  background: #52a4de;
+}
+
+/* ensure text visible */
+.order-table thead tr:hover th {
+  color: #ffffff;
+}
+
+/* ================= BUTTON ================= */
+
+.return-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.return-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .my-order-page {
+    padding: 15px 0;
+  }
+
+  .order-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .order-search {
+    width: 200px;
+  }
+}

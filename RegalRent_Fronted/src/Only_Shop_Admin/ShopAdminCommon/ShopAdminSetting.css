@@ -1,0 +1,167 @@
+:root {
+  --accent: #0a58ff;
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #222;
+  --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --border: #334155;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* WRAPPER */
+.settings-wrapper {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 25px;
+}
+
+.settings-wrapper h1 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* CARD */
+.setting-card {
+  background: var(--card);
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  transition: 0.2s;
+}
+
+.setting-card:hover {
+  transform: translateY(-2px);
+}
+
+.setting-card label {
+  font-weight: 500;
+}
+
+/* RANGE */
+.setting-card input[type="range"] {
+  flex: 1;
+  margin: 0 12px;
+}
+
+/* SELECT + INPUT */
+.setting-card select,
+.setting-card input[type="color"] {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+/* ROW */
+.setting-card.row {
+  flex-direction: row;
+}
+
+/* ACTIONS */
+.setting-actions {
+  text-align: right;
+  margin-top: 25px;
+}
+
+.reset-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.reset-btn:hover {
+  opacity: 0.9;
+}
+
+
+
+
+.settings-wrapper {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+.setting-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.setting-card label {
+  font-weight: 500;
+}
+
+.setting-card select,
+.setting-card input[type="range"],
+.setting-card input[type="color"] {
+  flex: 1;
+  min-width: 160px;
+}
+
+.setting-card.row {
+  flex-direction: row;
+}
+
+.setting-actions {
+  text-align: right;
+}
+
+.reset-btn {
+  background: var(--accent);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .setting-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .setting-actions {
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .settings-wrapper {
+    padding: 12px;
+  }
+
+  .setting-card {
+    padding: 14px;
+  }
+}
