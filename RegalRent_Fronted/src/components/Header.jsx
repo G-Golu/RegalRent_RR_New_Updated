@@ -488,10 +488,14 @@ try {
           />
         </div>
       )}
+      
 
       {/* MENU */}
       {isLandingPage && (
         <nav className="header-menu">
+          <button onClick={() => window.dispatchEvent(new Event("toggleChatbot"))}>
+  Chat Us
+</button>
           <button onClick={() => scrollToSection("services")}>Services</button>
           <button onClick={() => scrollToSection("blocks")}>Blocks</button>
           <button onClick={() => scrollToSection("features")}>Features</button>
@@ -501,9 +505,7 @@ try {
           <button onClick={() => scrollToSection("collections")}>Collections</button>
           <button onClick={() => scrollToSection("contact")}>Contact Us</button>
           <button onClick={() => scrollToSection("plans")}>Our Plans</button>
-       <button onClick={() => window.dispatchEvent(new Event("openChatbot"))}>
-  Chat Us
-</button>
+      
         </nav>
       )}
 
