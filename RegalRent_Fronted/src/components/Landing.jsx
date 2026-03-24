@@ -7,6 +7,7 @@ import { FaTshirt } from "react-icons/fa";
 
 import Contact from "./Contact.jsx"
 import PlansPage from "./Plans.jsx";
+import ChatbotPage from "../components/chatboat/ChatboatAI.jsx";
 
 
 const slides = [
@@ -295,6 +296,9 @@ useEffect(() => {
 {/* contact page added here ========== */}
    
    <Contact />
+
+   {/* today added new chatbot page : 24-03-2026 */}
+   <ChatbotPage />
 
     </div>
   );

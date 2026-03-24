@@ -501,6 +501,9 @@ try {
           <button onClick={() => scrollToSection("collections")}>Collections</button>
           <button onClick={() => scrollToSection("contact")}>Contact Us</button>
           <button onClick={() => scrollToSection("plans")}>Our Plans</button>
+       <button onClick={() => window.dispatchEvent(new Event("openChatbot"))}>
+  Chat Us
+</button>
         </nav>
       )}
 
