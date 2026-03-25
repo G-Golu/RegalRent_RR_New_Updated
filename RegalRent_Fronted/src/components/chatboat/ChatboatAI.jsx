@@ -23,7 +23,7 @@ const Chatbot = () => {
     <>
       {/* Floating Button */}
       <div className="chatbot-btn" onClick={() => setOpen(prev => !prev)}>
-        {open ? "✖" : "💬"}
+        {open ? "💬" : "💬"}
       </div>
 
       {/* Chat Window */}

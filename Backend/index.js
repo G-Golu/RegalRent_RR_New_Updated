@@ -178,6 +178,9 @@ import packageRoutes from "./routes/packageRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import storeRoutes from "./routes/storeRoutes.js";
 
+// new added -- only UserRequestList --admin heading notification 25-03-2026 --------------------------
+ import userRequestListRoutes from "./routes/UserRequestList/userRequestListRoutes.js"
+
 
 // ===============================  Only Admin Reports =========================================
 import financeReportRoutes from "./routes/adminReportRoutes/financeReportRoutes.js";
@@ -354,3 +357,8 @@ app.use("/api/password", passwordRoutes);
 
 // contact details =======================
 app.use("/api/contact", contactRoutes);
+
+
+
+// new added -- only UserRequestList --admin heading notification 25-03-2026 --------------------------
+app.use ("/api/user_requestlist", userRequestListRoutes)

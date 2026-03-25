@@ -578,6 +578,9 @@ import Profile from "./dashboard/pages/Profile";
 import Settings from "./dashboard/pages/Settings";
 import Logout from "./dashboard/pages/Logout";
 
+import UserRequestList from "./dashboard/pages/UserRequestList.jsx";  // this is new added for header notification user request list
+// this is new added -- user request list =  admin header notification 
+
 import MasterModule from "./dashboard/pages/MasterModule";
 import InventoryModule from "./dashboard/pages/MenuPages/InventoryModule";
 import TransactionModule from "./dashboard/pages/MenuPages/TransactionModule";
@@ -661,6 +664,9 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Settings />} />
           <Route path="logout" element={<Logout />} />
+          
+          <Route path="user_requestlist" element={<UserRequestList />} />  
+          {/* this is new added -- user request list =  admin header notification  */}
 
           <Route path="master-module" element={<MasterModule />} />
           <Route path="inventory-module" element={<InventoryModule />} />

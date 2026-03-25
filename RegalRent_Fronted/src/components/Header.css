@@ -367,3 +367,34 @@ today added new for try , 17-03-2026
     display: none;
   }
 }
+
+
+
+/* todaqy add notification bar ------25-03-2026 */
+
+
+/* ===== Notification (Fully Scoped) ===== */
+/* ===== Notification (Fully Scoped) ===== */
+.hdr-notif-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.hdr-notif-icon {
+  color: #635151; /* dark gray, adjust as needed */
+}
+
+.hdr-notif-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e74c3c;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
