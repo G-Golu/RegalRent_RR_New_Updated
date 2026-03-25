@@ -534,8 +534,9 @@ export const createStore = (req, res) => {
       email,
       "Store Created Successfully 🎉",
       `
-      <h2>Dear ${name},</h2>
-      <p>Your store has been created successfully.</p>
+      <h2>Dear ${name}, 🎉 Congratulations! </h2>
+      <p>Your store has been successfully created !.</p>
+      <p>We are delighted to welcome you as a member of RegalRental. Wishing you a bright and successful future. Thank you!   </p>
 
       <h3>Login Details:</h3>
       <p><b>Email:</b> ${email}</p>
@@ -901,7 +902,7 @@ export const deleteStore = (req, res) => {
               // USER EMAIL
               await sendEmail(
                 email,
-                "Store Deleted ❌",
+                "Store Deleted ",
                 `<p>Hi ${name}, your store has been deleted.</p>`
               );
 
