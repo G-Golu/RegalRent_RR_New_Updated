@@ -1590,7 +1590,7 @@ import sendEmail from "../AddStoreEmail/SendEmail.js";
 
 /* ================= CREATE STORE ================= */
 export const createStore = (req, res) => {
-
+const user_id = userResult.insertId;
   const {
     name,
     email,
@@ -1728,6 +1728,26 @@ export const createStore = (req, res) => {
   <p>IFSC: ${ifsc_code || "-"}</p>
   `
 );
+
+
+ // new added for shop_user_get notification ==  No need can eaisy to delete this part ===================================
+
+  /* ===== INSERT NOTIFICATION ===== */
+  // ✅ Make sure user_id is defined BEFORE this point
+  db.query(
+    "INSERT INTO shop_user_notification (user_id, message) VALUES (?, ?)",
+    [user_id, "Your store has been successfully created!"],
+    (err) => {
+      if (err) console.error("Notification insert error:", err);
+    }
+  );
+
+
+ // new added for shop_user_get notification =====================================
+
+
+
+
 
   } catch (mailErr) {
     console.error("Email Error:", mailErr);
@@ -2169,3 +2189,8 @@ export const deleteStore = (req, res) => {
     }
   );
   };
+
+
+
+
+ 

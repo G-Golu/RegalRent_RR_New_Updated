@@ -627,6 +627,7 @@ import ShopAdminSettings from "./Only_Shop_Admin/ShopAdminCommon/ShopAdminSettin
 import ShopAdminProfile from "./Only_Shop_Admin/Shop-Admin_Profile/ShopAdminProfile";
 import ShopAdminLogout from "./Only_Shop_Admin/Shop-Admin_Profile/ShopAdminLogout";
 
+import ShopNotifications from "./Only_Shop_Admin/ShopAdminCommon/ShopUserNotification/ShopUserNotification.jsx";
 
 import ReturnList from "./Only_Shop_Admin/ReturnManagement/ReturnList.jsx";
 import ReturnPage from "./Only_Shop_Admin/ReturnManagement/Return.jsx";
@@ -694,6 +695,8 @@ function App() {
           <Route path="shop-products" element={<ShpPrdList />} />
           <Route path="categories" element={<CategoryManagement />} />
          
+         <Route path="shop-user-notification" element={<ShopNotifications />} />
+
         
           <Route path="shop-order/:orderGroupId" element={<ShopReceipt />} />
           <Route path="staff" element={<Staff />} />

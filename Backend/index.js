@@ -207,6 +207,13 @@ import passwordRoutes from "./routes/PasswordRoute/passwordRoutes.js"
 import shopProductBookRoutes from "./routes/shopAdmin/shopProductBookRoutes.js";
 import shopCartRoutes from "./routes/shopAdmin/shopCartRoutes.js";
 
+
+// Notification -==================
+
+import shopNotificationRoutes from "./routes/ShopUserNotification/shopNotificationRoutes.js"
+
+
+
 // Shop Return Page ---------------------------------------------
 
 import shopReturnRoutes  from "./routes/shopAdmin/Return/shopReturnRoutes.js";
@@ -362,3 +369,7 @@ app.use("/api/contact", contactRoutes);
 
 // new added -- only UserRequestList --admin heading notification 25-03-2026 --------------------------
 app.use ("/api/user_requestlist", userRequestListRoutes)
+
+// shop user Notification --==============================
+
+app.use("/api/shop-user-notification", shopNotificationRoutes);

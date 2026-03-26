@@ -731,7 +731,7 @@
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Heart, ShoppingCart } from "lucide-react";
+import {Bell, Heart, ShoppingCart } from "lucide-react";
 import "./header.css";
 import { getCartApi } from "../../api/shopAdmin/shopCartApi.js";
 
@@ -790,7 +790,7 @@ const loadCartCount = async () => {
   return sum + (item.quantity || 1);
 }, 0);
 
-setCartCount(totalQty); // ⭐ FIX
+setCartCount(totalQty); //  FIX
 
   } catch (err) {
     console.error("Cart load error:", err);
@@ -866,6 +866,19 @@ useEffect(() => {
       </div>
 
       <div className="admin-header-right">
+
+{/* Notification */}
+
+
+        <div  className="shop-user-notification"
+          onClick={() => navigate("/shop-admin/shop-user-notification")}
+        >
+          <Bell size={22} />
+
+       
+        </div>
+
+
 
         {/* CART */}
 
