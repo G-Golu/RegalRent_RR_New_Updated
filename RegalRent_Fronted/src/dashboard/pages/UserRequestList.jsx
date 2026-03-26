@@ -138,7 +138,7 @@ const UserRequestList = () => {
   const [filteredContacts, setFilteredContacts] = useState([]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterDate, setFilterDate] = useState("today");
+  const [filterDate, setFilterDate] = useState("all"); // default value
   const [filterPlan, setFilterPlan] = useState("");
   const [filterAddress, setFilterAddress] = useState("");
 

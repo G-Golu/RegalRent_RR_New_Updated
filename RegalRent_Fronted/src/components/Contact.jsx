@@ -436,7 +436,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await fetch("http://localhost:5000/api/contact", {
+      await fetch("http://localhost:5000/api/contacts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
