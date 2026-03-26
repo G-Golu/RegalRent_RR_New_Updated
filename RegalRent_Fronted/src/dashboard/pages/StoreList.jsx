@@ -17,7 +17,8 @@ const StoreList = () => {
       try {
         const storeRes = await fetchStores();
         const pkgRes = await getPackages();
-        setList(storeRes.data);
+        // setList(storeRes.data);
+          setList(storeRes.data.stores || []);
         setPackageList(pkgRes);
       } catch (error) {
         console.error("Error loading stores:", error);
@@ -28,20 +29,27 @@ const StoreList = () => {
 
   /* SEARCH FILTER */
   const filteredList = useMemo(() => {
-    return list.filter((u) => {
-      const pkg = packageList.find((p) => p.id === Number(u.package_id));
-      const searchText = search.toLowerCase();
+  if (!Array.isArray(list)) return [];
 
-      return (
-        u.name?.toLowerCase().includes(searchText) ||
-        u.mobile?.toLowerCase().includes(searchText) ||
-        u.email?.toLowerCase().includes(searchText) ||
-        u.address?.toLowerCase().includes(searchText) ||
-        (pkg?.package_name || "").toLowerCase().includes(searchText) ||
-        (u.categories || []).join(", ").toLowerCase().includes(searchText)
-      );
-    });
-  }, [search, list, packageList]);
+  return list.filter((u) => {
+    const pkg = packageList.find(
+      (p) => p.id === Number(u.package_id)
+    );
+
+    const searchText = search.toLowerCase();
+
+    return (
+      u.name?.toLowerCase().includes(searchText) ||
+      u.mobile?.toLowerCase().includes(searchText) ||
+      u.email?.toLowerCase().includes(searchText) ||
+      u.address?.toLowerCase().includes(searchText) ||
+      (pkg?.package_name || "").toLowerCase().includes(searchText) ||
+      (Array.isArray(u.categories) ? u.categories.join(", ") : "")
+        .toLowerCase()
+        .includes(searchText)
+    );
+  });
+}, [search, list, packageList]);
 
   /* EXPORT EXCEL */
   const exportExcel = () => {

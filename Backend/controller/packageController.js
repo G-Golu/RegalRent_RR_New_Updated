@@ -250,29 +250,76 @@ export const updatePackage = (req, res) => {
   );
 };
 
+// 26-03-2026 : All ok only comment for update this commented section for add database update 
+
+// /* =========================
+//    ENABLE / DISABLE PACKAGE
+// ========================= */
+// export const togglePackage = (req, res) => {
+//   const { id } = req.params;
+//   const { status } = req.body;
+
+//   const sql = `
+//     UPDATE package_create
+//     SET status = ?
+//     WHERE id = ?
+//   `;
+
+//   db.query(sql, [status, id], (err) => {
+//     if (err) {
+//       console.error("DB ERROR (STATUS):", err);
+//       return res.status(500).json({
+//         message: "Database error",
+//       });
+//     }
+
+//     res.json({
+//       message: "Status updated successfully",
+//     });
+//   });
+// };
+
+// 26-03-2026 : All ok only comment for update this commented section for add database update 
+
+
+
+
 /* =========================
    ENABLE / DISABLE PACKAGE
 ========================= */
 export const togglePackage = (req, res) => {
+  
   const { id } = req.params;
   const { status } = req.body;
+  // console.log("TOGGLE HIT", id, status);
 
-  const sql = `
-    UPDATE package_create
-    SET status = ?
-    WHERE id = ?
-  `;
+  // 1️⃣ Update package status
+  db.query(
+    "UPDATE package_create SET status=? WHERE id=?",
+    [status, id],
+    (err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ message: "Package update failed" });
+      }
 
-  db.query(sql, [status, id], (err) => {
-    if (err) {
-      console.error("DB ERROR (STATUS):", err);
-      return res.status(500).json({
-        message: "Database error",
-      });
+      // 2️⃣ ALSO update stores using this package
+      db.query(
+        "UPDATE stores SET status=? WHERE package_id=?",
+        [status, id],
+        (err2) => {
+          if (err2) {
+            console.error(err2);
+            return res.status(500).json({
+              message: "Store status update failed",
+            });
+          }
+
+          res.json({
+            message: "Package + related stores updated successfully",
+          });
+        }
+      );
     }
-
-    res.json({
-      message: "Status updated successfully",
-    });
-  });
+  );
 };

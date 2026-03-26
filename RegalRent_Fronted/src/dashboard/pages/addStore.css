@@ -649,3 +649,27 @@ padding-top:80px;
   accent-color: #2563eb;
   cursor: pointer;
 }
+
+
+
+
+/* 26-03-2026  ,  only for card status color show */
+.store-days-active {
+  color: green;
+  font-weight: bold;
+}
+
+.store-days-warning {
+  color: orange; /* 7 → 4 days */
+  font-weight: bold;
+}
+
+.store-days-critical {
+  color: red; /* 3 → 1 days */
+  font-weight: bold;
+}
+
+.store-days-expired {
+  color: red; /* 0 days / expired */
+  font-weight: bold;
+}

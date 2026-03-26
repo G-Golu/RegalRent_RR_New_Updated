@@ -484,7 +484,11 @@ const [productStats, setProductStats] = useState({
   const loadStores = async () => {
     try {
       const res = await fetchStores();
-      setStores(res.data || []);
+      // setStores(res.data || []);
+      console.log("STORE API RESPONSE:", res);
+
+    setStores(res.data.stores || []);
+
     } catch (err) {
       console.error("Store Load Error:", err);
     }
@@ -622,7 +626,7 @@ const completedReturns = returns.filter(
 
     const interval = setInterval(() => {
       loadAll();
-    }, 5000);
+    }, 15000);  // 
 
     return () => clearInterval(interval);
 

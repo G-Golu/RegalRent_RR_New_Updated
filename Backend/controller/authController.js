@@ -302,7 +302,8 @@ export const login = (req, res) => {
     /* ===== STORE CHECK ===== */
 
     db.query(
-      `SELECT s.created_at, s.status, p.days
+      // `SELECT s.created_at, s.status, p.days 26-03-2026
+      `SELECT s.created_at, s.status, p.days, p.status AS package_status
        FROM stores s
        LEFT JOIN package_create p
        ON s.package_id = p.id
@@ -322,12 +323,55 @@ export const login = (req, res) => {
         }
 
         const store = stores[0];
+        console.log("STORE DATA:", store);
+        // 🔴 PACKAGE DISABLED CHECK -- 26-3-2026
+// if (store.package_status === 0) {
+//   return res.status(403).json({
+//     message: "Your package has been disabled by admin.",
+//   });
+// }
+// console.log("STORE STATUS:", store.status, typeof store.status);
+//         // if (store.status === 0) { 26-03-2026 , comment for block after package expired
+//         if (store.status === 0) {
+//           return res.status(403).json({
+//             message: "Your store is inactive. Contact admin.",
+//           });
+//         }
+        
 
-        if (store.status === 0) {
-          return res.status(403).json({
-            message: "Your store is inactive. Contact admin.",
-          });
-        }
+
+// 🔴 STORE DISABLED (manual)
+if (store.status === 0) {
+  return res.status(403).json({
+    message: "Your store is inactive. Contact admin.",
+  });
+}
+
+// 🔴 PACKAGE DISABLED
+if (store.package_status === 0) {
+  return res.status(403).json({
+    message: "Your package has been disabled by admin.",
+  });
+}
+
+// 🔴 PACKAGE EXPIRY CHECK
+if (store.created_at && store.days !== null) {
+
+  const created = new Date(store.created_at);
+  const expiry = new Date(created);
+  expiry.setDate(created.getDate() + Number(store.days));
+
+  const today = new Date();
+
+  if (today > expiry) {
+    return res.status(403).json({
+      message: "Your package has expired. Please renew.",
+    });
+  }
+}
+
+
+
 
         /* ===== PACKAGE EXPIRY CHECK ===== */
 
@@ -351,9 +395,11 @@ export const login = (req, res) => {
         /* ===== LOGIN SUCCESS ===== */
 
         const token = jwt.sign(
+          
           { id: user.id, role: user.role },
           process.env.JWT_SECRET || "secret123",
           { expiresIn: "7d" }
+          
         );
 
         res.json({
