@@ -873,7 +873,7 @@ useEffect(() => {
         <div  className="shop-user-notification"
           onClick={() => navigate("/shop-admin/shop-user-notification")}
         >
-          <Bell size={22} />
+          <Bell size={23} />
 
        
         </div>

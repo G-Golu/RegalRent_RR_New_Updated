@@ -1,69 +1,84 @@
 import { useEffect, useState } from "react";
-import "../wishlist/wishlist.css";
+import "./wishlist.css";
 
 const WishlistPage = () => {
-
   const [wishlistItems, setWishlistItems] = useState([]);
 
   useEffect(() => {
     const storedWishlist =
       JSON.parse(localStorage.getItem("wishlist")) || [];
-
     setWishlistItems(storedWishlist);
   }, []);
 
-  const removeItem = (id) => {
-    const updated = wishlistItems.filter(item => item.id !== id);
 
-    setWishlistItems(updated);
+
+const removeItem = (id) => {
+  setWishlistItems((prev) => {
+    const updated = prev.filter(
+      (item) => String(item.id) !== String(id)
+    );
+
     localStorage.setItem("wishlist", JSON.stringify(updated));
-  };
+
+    return updated;
+  });
+};
+
+
+
 
   return (
-    <div className="wishlist-container">
+    <div className="crmsWishlist-wrapper">
 
-      <div className="wishlist-header">
+      {/* HEADER */}
+      <div className="crmsWishlist-header">
         <h2>❤️ My Wishlist</h2>
         <span>{wishlistItems.length} items</span>
       </div>
 
+      {/* EMPTY */}
       {wishlistItems.length === 0 ? (
-        <div className="wishlist-empty">
+        <div className="crmsWishlist-empty">
           <h3>Your wishlist is empty</h3>
           <p>Add items you love to see them here.</p>
         </div>
       ) : (
 
-        <div className="wishlist-grid">
+        <div className="crmsWishlist-grid">
 
           {wishlistItems.map((item) => (
-            <div key={item.id} className="wishlist-card">
+            <div key={item.id} className="crmsWishlist-card">
 
-              <div className="wishlist-img">
+              {/* IMAGE */}
+              <div className="crmsWishlist-img">
                 <img
                   src={item.image || "/no-image.png"}
                   alt={item.name}
                 />
               </div>
 
-              <div className="wishlist-info">
+              {/* INFO */}
+              <div className="crmsWishlist-info">
 
-                <h3 className="wishlist-name">
+                <h3 className="crmsWishlist-name">
                   {item.name}
                 </h3>
 
-                <p className="wishlist-price">
+                <p className="crmsWishlist-price">
                   ₹{item.price}
                 </p>
 
-                <div className="wishlist-actions">
+                <div className="crmsWishlist-actions">
 
                   <button
-                    className="wishlist-remove"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    Remove
-                  </button>
+  className="crmsWishlist-removeBtn"
+  onClick={(e) => {
+    e.stopPropagation();   //  VERY IMPORTANT
+    removeItem(item.id);
+  }}
+>
+  Remove
+</button>
 
                 </div>
 
@@ -73,9 +88,7 @@ const WishlistPage = () => {
           ))}
 
         </div>
-
       )}
-
     </div>
   );
 };
