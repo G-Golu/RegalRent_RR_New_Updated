@@ -311,6 +311,19 @@ const Login = () => {
 
       console.log("LOGIN RESPONSE:", res); // 🔍 DEBUG
 
+
+      // today 27-03-2026  added for token save , shop user notification ===========
+
+
+      // ✅ STORE TOKEN (EXACT PLACE)  
+localStorage.setItem("token", res.token);
+
+// ✅ DEBUG (optional but important)
+console.log("Stored Token:", localStorage.getItem("token"));
+
+
+      // today 27-03-2026  added for token save , shop user notification ===========
+
       // ✅ If backend returns user
       if (res?.user) {
 
@@ -336,7 +349,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(updatedUser));
 
         // 🔥 IMPORTANT: store token
-        localStorage.setItem("token", res.token);
+        // localStorage.setItem("token", res.token); 27-03-2026 , commentd
 
         // ✅ Notify UI (Header update)
         window.dispatchEvent(new Event("userUpdated"));

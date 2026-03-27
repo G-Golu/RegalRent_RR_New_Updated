@@ -36,7 +36,9 @@
 
 .shop-notifications li.read {
   opacity: 0.6;
-}
+};
+
+
 
 .shop-notifications .dot {
   width: 10px;
@@ -47,4 +49,30 @@
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+
+.notification-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.notification-item.unread {
+  background: #f5f9ff;
+  font-weight: 600;
+}
+
+.notification-item.read {
+  opacity: 0.7;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
 }

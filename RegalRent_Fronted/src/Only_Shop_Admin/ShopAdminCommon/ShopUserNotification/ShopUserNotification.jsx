@@ -1,70 +1,114 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./shopNotification.css"; // create CSS for styling
+import "./shopNotification.css";
+
+const API_URL = "http://localhost:5000/api/shop-user-notification";
 
 const ShopNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Fetch notifications
+  const getToken = () => localStorage.getItem("token");
+
+  /* ================= FETCH ================= */
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/shop-user-notification/", {
-        withCredentials: true // if using cookies
+      const token = getToken();
+      if (!token) {
+        setError("User not authenticated");
+        return;
+      }
+
+      const res = await axios.get(API_URL, {
+        headers: { Authorization: `Bearer ${token}` },
       });
-      if (res.data.success) {
-        setNotifications(res.data.notifications);
+
+      if (res.data?.success) {
+        setNotifications(res.data.notifications || []);
+      } else {
+        setError("Failed to fetch notifications");
       }
     } catch (err) {
-      console.error("Error fetching notifications:", err);
+      setError(err.response?.data?.message || "Server error");
     } finally {
       setLoading(false);
     }
   };
 
-  // Mark notification as read
+  /* ================= MARK AS READ ================= */
   const markAsRead = async (id) => {
+    const token = getToken();
+    if (!token) return;
+
+    // Optimistic UI update
+    setNotifications((prev) =>
+      prev.map((n) =>
+        n.id === id ? { ...n, is_read: 1 } : n
+      )
+    );
+
     try {
-      const res = await axios.post(
-        `http://localhost:5000/api/shop/notifications/read/${id}`,
+      await axios.post(
+        `${API_URL}/read/${id}`,
         {},
-        { withCredentials: true }
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
-      if (res.data.success) {
-        // update state locally
-        setNotifications((prev) =>
-          prev.map((n) => (n.id === id ? { ...n, is_read: 1 } : n))
-        );
-      }
     } catch (err) {
-      console.error("Error marking notification as read:", err);
+      console.error("Mark as read failed:", err);
+
+      // rollback if failed
+      setNotifications((prev) =>
+        prev.map((n) =>
+          n.id === id ? { ...n, is_read: 0 } : n
+        )
+      );
     }
   };
 
   useEffect(() => {
     fetchNotifications();
+
+    // 🔥 Optional: Auto refresh every 10 sec
+    const interval = setInterval(fetchNotifications, 10000);
+    return () => clearInterval(interval);
   }, []);
 
-  if (loading) return <p>Loading notifications...</p>;
+  /* ================= UI ================= */
 
-  if (notifications.length === 0) return <p>No new notifications.</p>;
+  if (loading) return <p className="loading">Loading notifications...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
     <div className="shop-notifications">
       <h2>Notifications</h2>
-      <ul>
-        {notifications.map((note) => (
-          <li
-            key={note.id}
-            className={note.is_read ? "read" : "unread"}
-            onClick={() => !note.is_read && markAsRead(note.id)}
-          >
-            <p>{note.message}</p>
-            <span>{new Date(note.created_at).toLocaleString()}</span>
-            {!note.is_read && <span className="dot"></span>}
-          </li>
-        ))}
-      </ul>
+
+      {notifications.length === 0 ? (
+        <p className="empty">No new notifications</p>
+      ) : (
+        <ul>
+          {notifications.map((note) => (
+            <li
+              key={note.id}
+              className={`notification-item ${
+                note.is_read ? "read" : "unread"
+              }`}
+              onClick={() => !note.is_read && markAsRead(note.id)}
+            >
+              <div className="content">
+                <p>{note.message}</p>
+                <span>
+                  {new Date(note.created_at).toLocaleString()}
+                </span>
+              </div>
+
+              {!note.is_read && <span className="dot"></span>}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

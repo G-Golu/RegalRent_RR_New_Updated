@@ -1587,10 +1587,11 @@
 import db from "../config/db.js";
 import bcrypt from "bcryptjs";
 import sendEmail from "../AddStoreEmail/SendEmail.js";
+import { insertNotification } from "./ShopUserNotification/shopNotificationController.js";
 
 /* ================= CREATE STORE ================= */
 export const createStore = (req, res) => {
-const user_id = userResult.insertId;
+
   const {
     name,
     email,
@@ -1734,14 +1735,44 @@ const user_id = userResult.insertId;
 
   /* ===== INSERT NOTIFICATION ===== */
   // ✅ Make sure user_id is defined BEFORE this point
-  db.query(
-    "INSERT INTO shop_user_notification (user_id, message) VALUES (?, ?)",
-    [user_id, "Your store has been successfully created!"],
-    (err) => {
-      if (err) console.error("Notification insert error:", err);
-    }
-  );
+  const message = `
+Welcome ${name}! 🎉  
+Your store "${name}" has been created successfully.
+`;
 
+// INSERT NOTIFICATION
+insertNotification(user_id, `Welcome ${name}! Your store "${name}" has been created successfully.`);
+
+// db.query(
+//   "INSERT INTO shop_user_notifications(user_id, message, is_read) VALUES (?, ?, 0)",
+//   [user_id, message],
+//   (err) => {
+//     if (err) console.error("Notification insert error:", err);
+//     else console.log("Notification saved ✅");
+//   }
+// );
+
+
+// updateStore  user get notification --
+
+// db.query(
+//  "INSERT INTO shop_user_notifications (user_id, message, is_read) VALUES (?, ?, 0)",
+//   [user_id, `Your store details have been updated.`]
+// );
+
+// delete 
+
+// db.query(
+//   "INSERT INTO shop_user_notifications (user_id, message, is_read) VALUES (?, ?, 0)",
+//   [user_id, `Your store has been deleted.`]
+// );
+
+// package expiry 
+
+// db.query(
+//   "INSERT INTO shop_user_notifications (user_id, message, is_read) VALUES (?, ?, 0)",
+//   [store.user_id, `Your package will expire in ${diffDays} days.`]
+// );
 
  // new added for shop_user_get notification =====================================
 
@@ -1863,7 +1894,9 @@ try {
             : `<p>Dear ${store.name},</p>
                <p>Your package will expire in <b>${diffDays} day(s)</b>.</p>`
         ).catch(err => console.error("Mail error:", err));
-
+  // ADD NOTIFICATION HERE
+        insertNotification(store.user_id, `Your package will expire in ${diffDays} day(s).`);
+      
         reminderEmailsSent.push({
           store: store.name,
           email: store.email,
@@ -2123,6 +2156,8 @@ let changeHtml = changes.length
     })();
   });
 };
+// INSERT NOTIFICATION
+insertNotification(user_id, `Your store "${name}" details have been updated.`);
 
 // ✅ YAHI PE CALL HOGA
 updateUser();
@@ -2173,7 +2208,8 @@ export const deleteStore = (req, res) => {
                 "Store Deleted",
                 `<p>Deleted: ${name} (${email})</p>`
               );
-
+// INSERT NOTIFICATION
+insertNotification(user_id, `Your store "${name}" has been deleted.`);
             } catch (e) {
               console.log(e);
             }

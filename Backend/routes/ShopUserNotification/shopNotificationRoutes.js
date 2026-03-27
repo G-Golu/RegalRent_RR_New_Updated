@@ -1,10 +1,10 @@
 import express from "express";
 import { getUserNotifications, markNotificationAsRead } from "../../controller/ShopUserNotification/shopNotificationController.js";
-import  authMiddleware  from "../auth.js"; // assume JWT or session auth
+import  {verifyToken }  from "../../middleware/verifyToken.js"; //  correct , this is user authentication check
 
 const router = express.Router();
 
-router.get("/", authMiddleware, getUserNotifications);
-router.post("/read/:id", authMiddleware, markNotificationAsRead);
+router.get("/", verifyToken, getUserNotifications);
+router.post("/read/:id", verifyToken, markNotificationAsRead);
 
 export default router;
