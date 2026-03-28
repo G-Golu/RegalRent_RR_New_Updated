@@ -7,225 +7,17 @@
 // const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`;
 
 // const Profile = () => {
-//   const storedUser = JSON.parse(
-//     localStorage.getItem("user")
-//   ) || {
+//  const [user, setUser] = useState(() => {
+//   return JSON.parse(localStorage.getItem("user")) || {
 //     name: "",
 //     email: "",
 //     phone: "",
 //     role: "",
 //     profile_image: "",
 //   };
+// });
 
-//   const [user, setUser] = useState(storedUser);
-//   const [editing, setEditing] = useState(false);
-//   const [loading, setLoading] = useState(false);
-
-//   const handleChange = (e) => {
-//     setUser({
-//       ...user,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSave = () => {
-//     localStorage.setItem("user", JSON.stringify(user));
-//     window.dispatchEvent(new Event("userUpdated"));
-//     setEditing(false);
-//     alert("Profile updated successfully!");
-//   };
-
-//   const handleCancel = () => {
-//     setUser(storedUser);
-//     setEditing(false);
-//   };
-
-//   const handleImageUpload = async (e) => {
-//     const file = e.target.files[0];
-//     if (!file) return;
-
-//     const formData = new FormData();
-//     formData.append("file", file);
-//     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
-
-//     try {
-//       setLoading(true);
-
-//       const res = await fetch(CLOUDINARY_URL, {
-//         method: "POST",
-//         body: formData,
-//       });
-
-//       const data = await res.json();
-
-//       const updatedUser = {
-//         ...user,
-//         profile_image: data.secure_url,
-//       };
-
-//       setUser(updatedUser);
-//       localStorage.setItem(
-//         "user",
-//         JSON.stringify(updatedUser)
-//       );
-
-//       window.dispatchEvent(
-//         new Event("userUpdated")
-//       );
-
-//       setLoading(false);
-//       alert("Image uploaded successfully!");
-//     } catch (error) {
-//       console.error("Upload error:", error);
-//       setLoading(false);
-//       alert("Failed to upload image");
-//     }
-//   };
-
-//   return (
-//     <div className="profile-wrapper">
-//       <div className="profile-header">
-//         <h1>My Profile</h1>
-//         <p>Manage your account details</p>
-//       </div>
-
-//       <div className="profile-card">
-//         <div className="profile-avatar-section">
-//           <img
-//             src={
-//               user.profile_image ||
-//               "/user-icon.png"
-//             }
-//             alt="Profile"
-//             className="profile-avatar-img"
-//           />
-
-//           {editing && (
-//             <label className="avatar-upload-label">
-//               {loading
-//                 ? "Uploading..."
-//                 : "Change Image"}
-//               <input
-//                 type="file"
-//                 accept="image/*"
-//                 onChange={handleImageUpload}
-//                 disabled={loading}
-//                 className="avatar-input"
-//               />
-//             </label>
-//           )}
-//         </div>
-
-//         <div className="profile-form">
-//           <div className="profile-row">
-//             <label>Name</label>
-//             <input
-//               type="text"
-//               name="name"
-//               value={user.name}
-//               onChange={handleChange}
-//               disabled={!editing}
-//             />
-//           </div>
-
-//           <div className="profile-row">
-//             <label>Email</label>
-//             <input
-//               type="email"
-//               name="email"
-//               value={user.email}
-//               onChange={handleChange}
-//               disabled={!editing}
-//             />
-//           </div>
-
-//           <div className="profile-row">
-//             <label>Phone</label>
-//             <input
-//               type="text"
-//               name="phone"
-//               value={user.phone}
-//               onChange={handleChange}
-//               disabled={!editing}
-//             />
-//           </div>
-
-//           <div className="profile-row">
-//             <label>Role</label>
-//             <input
-//               type="text"
-//               value={user.role}
-//               disabled
-//             />
-//           </div>
-
-//           <div className="profile-actions">
-//             {!editing ? (
-//               <button
-//                 className="btn-primary"
-//                 onClick={() =>
-//                   setEditing(true)
-//                 }
-//               >
-//                 Edit Profile
-//               </button>
-//             ) : (
-//               <>
-//                 <button
-//                   className="btn-outline"
-//                   onClick={handleCancel}
-//                   disabled={loading}
-//                 >
-//                   Cancel
-//                 </button>
-
-//                 <button
-//                   className="btn-primary"
-//                   onClick={handleSave}
-//                   disabled={loading}
-//                 >
-//                   Save Changes
-//                 </button>
-//               </>
-//             )}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Profile;  
-
-
-// all ok comment for update profile image  css or doing same as shop-admin today is : 11-03-2026
-
-
-
-
-
-
-
-
-
-
-// import { useState } from "react";
-// import "./profile.css";
-
-// const CLOUDINARY_UPLOAD_PRESET = "profile_upload";
-// const CLOUDINARY_CLOUD_NAME = "dypfnsw0l";
-// const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`;
-
-// const Profile = () => {
-//   const storedUser = JSON.parse(localStorage.getItem("user")) || {
-//     name: "",
-//     email: "",
-//     phone: "",
-//     role: "",
-//     profile_image: "",
-//   };
-
-//   const [user, setUser] = useState(storedUser);
+ 
 //   const [editing, setEditing] = useState(false);
 //   const [loading, setLoading] = useState(false);
 //   const [progress, setProgress] = useState(0); // new progress state
@@ -244,10 +36,13 @@
 //     alert("Profile updated successfully!");
 //   };
 
-//   const handleCancel = () => {
-//     setUser(storedUser);
-//     setEditing(false);
-//   };
+//  const handleCancel = () => {
+//   const latestUser =
+//     JSON.parse(localStorage.getItem("user")) || user;
+
+//   setUser(latestUser);
+//   setEditing(false);
+// };
 
 //   const handleImageUpload = async (e) => {
 //     const file = e.target.files[0];
@@ -311,12 +106,18 @@
 //       </div>
 
 //       <div className="profile-card">
-//         <div className="profile-avatar-section">
+//         {/* <div className="profile-avatar-section"> */}
+//         <div className="profile-top">
 //           <img
-//             src={user.profile_image || "/user-icon.png"}
-//             alt="Profile"
-//             className="profile-avatar-img"
-//           />
+//   src={user.profile_image || "/user-icon.png"}
+//  onError={(e) => {
+//   if (e.target.src !== window.location.origin + "/user-icon.png") {
+//     e.target.src = "/user-icon.png";
+//   }
+// }}
+//   alt="Profile"
+//   className="profile-avatar"
+// />
 
 //           {editing && (
 //             <label className="avatar-upload-label">
@@ -416,9 +217,31 @@
 
 // export default Profile;
 
+// comment for update profile image do correct 28-03-2026
 
 
-// today comment for again do correct css and ui 17-03-2026
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -426,10 +249,19 @@
 
 import { useState } from "react";
 import "./profile.css";
+import axios from "axios";
+
 
 const CLOUDINARY_UPLOAD_PRESET = "profile_upload";
 const CLOUDINARY_CLOUD_NAME = "dypfnsw0l";
 const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`;
+
+
+// this is admin profile image -------
+const updateProfileImageApi = (data) => {
+  return axios.post("http://localhost:5000/api/auth/update-profile-image", data);
+};
+
 
 const Profile = () => {
  const [user, setUser] = useState(() => {
@@ -443,6 +275,7 @@ const Profile = () => {
 });
 
  
+
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0); // new progress state
@@ -469,59 +302,70 @@ const Profile = () => {
   setEditing(false);
 };
 
-  const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
+ const handleImageUpload = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
 
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
 
-    try {
-      setLoading(true);
-      setProgress(0); // start progress
+  try {
+    setLoading(true);
+    setProgress(0);
 
-      // Use XMLHttpRequest to track upload progress
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", CLOUDINARY_URL);
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", CLOUDINARY_URL);
 
-      xhr.upload.onprogress = (event) => {
-        if (event.lengthComputable) {
-          const percent = Math.round((event.loaded * 100) / event.total);
-          setProgress(percent);
-        }
-      };
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const percent = Math.round((event.loaded * 100) / event.total);
+        setProgress(percent);
+      }
+    };
 
-      xhr.onload = () => {
-        const data = JSON.parse(xhr.responseText);
-        const updatedUser = {
-          ...user,
-          profile_image: data.secure_url,
-        };
+   xhr.onload = async () => {
+  const data = JSON.parse(xhr.responseText);
 
-        setUser(updatedUser);
-        localStorage.setItem("user", JSON.stringify(updatedUser));
-        window.dispatchEvent(new Event("userUpdated"));
-        setLoading(false);
-        setProgress(0);
-        alert("Image uploaded successfully!");
-      };
+  const storedUser = JSON.parse(localStorage.getItem("user"));
 
-      xhr.onerror = () => {
-        console.error("Upload error");
-        setLoading(false);
-        setProgress(0);
-        alert("Failed to upload image");
-      };
+  const updatedUser = {
+    ...storedUser,
+    profile_image: data.secure_url,
+  };
 
-      xhr.send(formData);
-    } catch (error) {
-      console.error("Upload error:", error);
+  // ✅ SAVE IN DB (CORRECT API)
+  await updateProfileImageApi({
+    userId: storedUser.id,
+    profile_image: data.secure_url,
+  });
+
+  // ✅ SAVE LOCAL
+  localStorage.setItem("user", JSON.stringify(updatedUser));
+  setUser(updatedUser);
+
+  window.dispatchEvent(new Event("userUpdated"));
+
+  alert("Image uploaded & saved permanently!");
+
+  setLoading(false);
+  setProgress(0);
+};
+
+    xhr.onerror = () => {
+      alert("Upload failed");
       setLoading(false);
       setProgress(0);
-      alert("Failed to upload image");
-    }
-  };
+    };
+
+    xhr.send(formData);
+
+  } catch (error) {
+    console.error(error);
+    setLoading(false);
+    setProgress(0);
+  }
+};
 
   return (
     <div className="profile-wrapper">

@@ -409,6 +409,7 @@ if (store.created_at && store.days !== null) {
             name: user.name,
             email: user.email,
             role: user.role.toLowerCase().replace(" ", "-"),
+             profile_image: user.profile_image || "",
           },
         });
 
