@@ -1,31 +1,49 @@
 import { useEffect, useState } from "react";
+import {
+  getWishlistApi,
+  removeWishlistApi
+} from "../../api/shopAdmin/wishlist/wishlistApi.js";
 import "./wishlist.css";
 
 const WishlistPage = () => {
   const [wishlistItems, setWishlistItems] = useState([]);
 
+  /* ================= LOAD WISHLIST ================= */
+  const loadWishlist = async () => {
+    try {
+      const storedUser = JSON.parse(localStorage.getItem("user"));
+
+      if (!storedUser?.id) return;
+
+      const res = await getWishlistApi(storedUser.id);
+console.log("API RESPONSE:", res.data);
+console.log("WISHLIST:", res.data.wishlist);
+      setWishlistItems(res.data.wishlist || []);
+
+    } catch (error) {
+      console.error("Wishlist load error:", error);
+    }
+  };
+
+  /* ================= REMOVE ================= */
+  const removeItem = async (id) => {
+    try {
+      await removeWishlistApi(id);
+
+      // 🔥 reload after delete
+      loadWishlist();
+
+      // 🔥 update header badge
+      window.dispatchEvent(new Event("wishlistUpdated"));
+
+    } catch (error) {
+      console.error("Remove error:", error);
+    }
+  };
+
   useEffect(() => {
-    const storedWishlist =
-      JSON.parse(localStorage.getItem("wishlist")) || [];
-    setWishlistItems(storedWishlist);
+    loadWishlist();
   }, []);
-
-
-
-const removeItem = (id) => {
-  setWishlistItems((prev) => {
-    const updated = prev.filter(
-      (item) => String(item.id) !== String(id)
-    );
-
-    localStorage.setItem("wishlist", JSON.stringify(updated));
-
-    return updated;
-  });
-};
-
-
-
 
   return (
     <div className="crmsWishlist-wrapper">
@@ -52,7 +70,11 @@ const removeItem = (id) => {
               {/* IMAGE */}
               <div className="crmsWishlist-img">
                 <img
-                  src={item.image || "/no-image.png"}
+                  src={
+                    item.image
+                      ? `http://localhost:5000/uploads/${item.image}`
+                      : "/no-image.png"
+                  }
                   alt={item.name}
                 />
               </div>
@@ -65,20 +87,20 @@ const removeItem = (id) => {
                 </h3>
 
                 <p className="crmsWishlist-price">
-                  ₹{item.price}
+                  ₹{item.rent_price}
                 </p>
 
                 <div className="crmsWishlist-actions">
 
                   <button
-  className="crmsWishlist-removeBtn"
-  onClick={(e) => {
-    e.stopPropagation();   //  VERY IMPORTANT
-    removeItem(item.id);
-  }}
->
-  Remove
-</button>
+                    className="crmsWishlist-removeBtn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeItem(item.id);
+                    }}
+                  >
+                    Remove
+                  </button>
 
                 </div>
 

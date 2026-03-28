@@ -192,9 +192,20 @@ export const submitContact = async (req, res) => {
     const plansRes = await axios.get("http://localhost:5000/api/packages");
     const plans = plansRes.data.filter((p) => p.status === 1);
 
-    const matchedPlan = plans.find(
-      (p) => p.package_name.toLowerCase() === selected_plan.toLowerCase()
-    );
+    if (!selected_plan) {
+  return res.status(400).json({ message: "Plan not selected ❌" });
+}
+    
+    // const matchedPlan = plans.find(
+    //   (p) => p.package_name.toLowerCase() === selected_plan.toLowerCase()
+    // );
+
+const matchedPlan = plans.find(
+  (p) =>
+    p.package_name?.toLowerCase() === selected_plan?.toLowerCase()
+);
+
+
 
     const amount = matchedPlan ? matchedPlan.price : 0;
 
@@ -275,6 +286,7 @@ export const submitContact = async (req, res) => {
             <p>Please scan the QR code below to complete your payment:</p>
 
             <img src="cid:qrcode" width="200"/>
+          
 
             <br/><br/>
             <p>Regards: Golu Kumar,<br/>Team: RegalRentals</p>

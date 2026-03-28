@@ -71,7 +71,7 @@ const ShopNotifications = () => {
   useEffect(() => {
     fetchNotifications();
 
-    // 🔥 Optional: Auto refresh every 10 sec
+    //  Optional: Auto refresh every 10 sec
     const interval = setInterval(fetchNotifications, 10000);
     return () => clearInterval(interval);
   }, []);

@@ -242,6 +242,8 @@ import staffRoutes from "./routes/shopAdmin/staffRoutes.js";
 // receipt group id for today 28-02-2026
 import shopCheckoutRoutes from "./routes/shopAdmin/Checkout/checkoutRoutes.js";
 
+// shop-user wishlist api ======== 28-03-2026
+import wishlistRoutes from "./routes/shopAdmin/wishlist/wishlistRoutes.js"
 
 //  Contact from landingpage bottom =====================
 import contactRoutes from "./routes/contact/contactRoutes.js"
@@ -373,3 +375,8 @@ app.use ("/api/user_requestlist", userRequestListRoutes)
 // shop user Notification --==============================
 
 app.use("/api/shop-user-notification", shopNotificationRoutes);
+
+
+// shop-user wishlist page api
+
+app.use("/api/wishlist", wishlistRoutes);

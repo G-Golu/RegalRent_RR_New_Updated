@@ -82,6 +82,7 @@
   background: #f9fafb;
   border-radius: 30px;
   cursor: pointer;
+   position: relative;
   transition: all 0.2s;
 }
 .profile-box:hover {
@@ -131,16 +132,42 @@
 /* DROPDOWN */
 .profile-dropdown {
   position: absolute;
+  top: calc(100% + 8px);
   right: 0;
-  top: 60px;
-  width: 200px;
+
+  width: 160px;              /* 🔥 reduce width */
   background: #ffffff;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   overflow: hidden;
-  z-index: 1001;
+  z-index: 9999;
 }
+.profile-dropdown div {
+  display: flex;              /* 🔥 important */
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.profile-dropdown div:hover {
+  background: #f3f4f6;
+}
+
+
+.logout {
+  color: #ef4444;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+}
+
 
 .dropdown-item {
   padding: 10px 16px;
@@ -204,4 +231,27 @@
    cursor: pointer;
   transition: transform 0.2s ease;
 
+}
+
+
+
+/* shop-user notification only =========== */
+
+
+
+.shop-user-notification {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-weight: bold;
 }

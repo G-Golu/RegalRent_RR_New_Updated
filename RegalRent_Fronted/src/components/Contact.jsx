@@ -433,10 +433,11 @@ const Contact = () => {
 
   /* 🔹 SUBMIT */
   const handleSubmit = async (e) => {
+    console.log("FORM DATA 🔥:", formData);
     e.preventDefault();
 
     try {
-      await fetch("http://localhost:5000/api/contacts", {
+      await fetch("http://localhost:5000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -499,6 +500,7 @@ const Contact = () => {
         <br/>
 
         <form className="uni-contact-form" onSubmit={handleSubmit}>
+          
 
           <input
             type="text"
