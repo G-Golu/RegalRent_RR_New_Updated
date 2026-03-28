@@ -1,33 +1,3 @@
-// import express from "express";
-// import {
-//   getCategories,
-//   createCategory,
-//   updateCategory,
-//   toggleCategoryStatus,
-// } from "../../controller/shopAdmin/shopCategoryController.js";
-
-// const router = express.Router();
-
-// router.get("/", getCategories);
-// router.post("/", createCategory);
-// router.put("/:id", updateCategory);
-// router.patch("/status", toggleCategoryStatus);
-
-// export default router;
-
-// today is 23-02-2026
-
-
-
-
-
-
-
-
-
-
-
-
 
 import express from "express";
 import {

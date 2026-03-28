@@ -1,14 +1,3 @@
-// import express from "express";
-// import { createOrder, getOrders } from "../../../controller/shopAdmin/OrderHistory/OrderHistoryController.js";
-
-// const router = express.Router();
-
-// router.post("/order", createOrder);
-// router.get("/order", getOrders);
-
-// export default router;
-
-
 
 // use for return 
 

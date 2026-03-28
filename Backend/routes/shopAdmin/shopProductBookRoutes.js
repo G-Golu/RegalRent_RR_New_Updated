@@ -1,23 +1,3 @@
-// import express from "express";
-// import {
-//  // checkDateConflict,
-//   createBooking,
-//   getBookedDates
-// } from "../../controller/shopAdmin/shopProductBookController.js";
-
-// const router = express.Router();
-
-// router.get("/booked-dates/:productId", getBookedDates);
-// // router.post("/check-booking", checkDateConf);  / this is for below
-
-// router.post("/create-booking", createBooking);
-
-// export default router;
-
-
-
-// today is 23-02-2026
-
 
 
 import express from "express";

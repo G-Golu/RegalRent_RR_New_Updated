@@ -1,32 +1,3 @@
-// import express from "express";
-// import {
-//   getProducts,
-//   createProduct,
-//   updateProduct,
-//   toggleProductStatus,
-// } from "../../controller/shopAdmin/shopProductController.js";
-
-// const router = express.Router();
-
-// router.get("/", getProducts);
-// router.post("/", createProduct);
-// router.put("/:id", updateProduct);
-// router.patch("/status", toggleProductStatus);
-
-// export default router;
-
-// ALL ARE CORRECT CURRENTLY NO ANY DOURT
-
-
-
-
-
-
-
-
-
-
-
 
 
 import express from "express";
