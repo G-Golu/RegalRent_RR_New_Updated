@@ -135,6 +135,21 @@ padding: 8px 4px; /* padding kam */
 .receipt-card{
   box-sizing: border-box;
   overflow: hidden;
+    position: relative;  
+    /* this is for img stamp  */
+}
+
+/* STAMP STYLE */
+.receipt-stamp {
+  position: absolute;
+  bottom: 80px;   /* adjust based on footer spacing */
+  left: 40px;
+  opacity: 0.85;  /* optional for realistic look */
+}
+
+.receipt-stamp img {
+  width: 195px;   /* adjust size */
+  height: auto;
 }
 
 

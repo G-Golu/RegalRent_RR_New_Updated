@@ -6,6 +6,8 @@ import "./shopReceipt.css";
 import logo from "../../assets/images/logo.png";
 import html2pdf from "html2pdf.js";
 
+import stamp from "../../assets/images/signatureW.png";
+
 const ShopReceipt = () => {
   const { orderGroupId } = useParams();
   const navigate = useNavigate();
@@ -169,6 +171,14 @@ const ShopReceipt = () => {
             <span>₹{finalDue}</span>
           </div>
         </div>
+
+
+{/* stamp img */}
+{/* STAMP */}
+<div className="receipt-stamp">
+  <img src={stamp} alt="stamp" />
+</div>
+
 
         <div className="receipt-footer">
           Thank you for shopping with us <br />
