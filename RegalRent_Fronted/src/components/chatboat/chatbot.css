@@ -272,3 +272,45 @@
 }
 
 
+/* chatbot voice male / female icons =============== */
+
+.voice-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  right: 10px;
+}
+
+.voice-option {
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 50%;
+  background: #eee;
+  transition: 0.3s;
+}
+
+.voice-option.active {
+  background: #007bff;
+  color: white;
+  transform: scale(1.2);
+}
+
+.voice-swap {
+  font-size: 14px;
+}
+
+
+
+.speak-toggle {
+  cursor: pointer;
+  margin-left: 8px;
+  padding: 5px 8px;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.speak-toggle.active {
+  background: green;
+  color: white;
+}

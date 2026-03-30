@@ -44,10 +44,6 @@ import passwordRoutes from "./routes/PasswordRoute/passwordRoutes.js"
 
 
 
-
-
-
-
 // shop-admin----
 // import shopProductBookRoutes from "./routes/shopAdmin/shopProductBookRoutes.js";
 import shopProductBookRoutes from "./routes/shopAdmin/shopProductBookRoutes.js";
@@ -226,3 +222,4 @@ app.use("/api/shop-user-notification", shopNotificationRoutes);
 // shop-user wishlist page api
 
 app.use("/api/wishlist", wishlistRoutes);
+
