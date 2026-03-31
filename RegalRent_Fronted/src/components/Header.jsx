@@ -131,16 +131,9 @@ const Header = () => {
         </span>
       </div>
 
-      {/* SEARCH */}
-      {!isLandingPage && (
-        <div className="header-center">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="header-search"
-          />
-        </div>
-      )}
+      
+       
+     
 
       {/* MENU */}
       {isLandingPage && (
