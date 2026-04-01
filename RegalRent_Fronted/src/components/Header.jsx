@@ -62,7 +62,7 @@ const Header = () => {
 
     const interval = setInterval(fetchCount, 3000); // every 3 sec
 
-    return () => clearInterval(interval); // ✅ cleanup
+    return () => clearInterval(interval); //  cleanup
   }, []);
 
   /* ===== 🔔 CLICK NOTIFICATION ===== */
