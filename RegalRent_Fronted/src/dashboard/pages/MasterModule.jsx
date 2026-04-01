@@ -1,20 +1,3 @@
-// const MasterModule = () => {
-//   return (
-//     <div className="page">
-//       <h1>Master Module</h1>
-//       <p>Manage master data like categories, roles and settings.</p>
-//     </div>
-//   );
-// };
-
-// export default MasterModule;
-
-
-
-
-
-
-
 
 
 import "./MasterModule.css";

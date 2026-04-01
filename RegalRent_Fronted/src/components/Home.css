@@ -245,7 +245,7 @@
   z-index: 2;
 }
 
-/* 🔥 HOVER EFFECT (premium feel) */
+/*  HOVER EFFECT (premium feel) */
 .royal-stack-card:hover {
   transform: translateY(-20px) scale(1.12) !important;
   z-index: 10;
@@ -253,7 +253,7 @@
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 
-/* 🔥 GLASS OVERLAY */
+/*  GLASS OVERLAY */
 .royal-stack-card::after {
   content: "";
   position: absolute;

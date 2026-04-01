@@ -21,7 +21,7 @@
   padding: 45px;
   border-radius: 24px;
 
-  /* GLASS EFFECT 🔥 */
+  /* GLASS EFFECT  */
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255,255,255,0.12);
@@ -67,7 +67,7 @@
   font-weight: 600;
 }
 
-/* FOCUS EFFECT 🔥 */
+/* FOCUS EFFECT  */
 .uni-contact-form input:focus,
 .uni-contact-form textarea:focus {
   border: 1px solid #ffd700;
@@ -87,7 +87,7 @@
   transition: 0.3s;
 }
 
-/* HOVER 🔥 */
+/* HOVER  */
 .uni-contact-form button:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(255,215,0,0.45);

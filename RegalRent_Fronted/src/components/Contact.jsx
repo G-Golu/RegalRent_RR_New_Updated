@@ -27,7 +27,7 @@ const Contact = () => {
     setCurrentVideo((prev) => (prev + 1) % videos.length);
   };
 
-  /* 🔥 LOAD + LISTEN SELECTED PLAN */
+  /*  LOAD + LISTEN SELECTED PLAN */
   useEffect(() => {
   const loadPlan = () => {
     const savedPlan = localStorage.getItem("selectedPlan");
@@ -41,7 +41,7 @@ const Contact = () => {
   // initial load
   loadPlan();
 
-  // 🔥 listen custom event (REAL TIME FIX)
+  //  listen custom event (REAL TIME FIX)
   window.addEventListener("planUpdated", loadPlan);
 
   return () => {
@@ -59,7 +59,7 @@ const Contact = () => {
 
   /* 🔹 SUBMIT */
   const handleSubmit = async (e) => {
-    console.log("FORM DATA 🔥:", formData);
+    console.log("FORM DATA :", formData);
     e.preventDefault();
 
     try {

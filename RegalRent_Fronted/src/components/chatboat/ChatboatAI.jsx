@@ -24,7 +24,7 @@ const Chatbot = () => {
 
   const messagesEndRef = useRef(null);
 
-  // 🔥 LOAD VOICES FIX
+  //  LOAD VOICES FIX
   useEffect(() => {
     const loadVoices = () => {
       window.speechSynthesis.getVoices();
@@ -171,7 +171,7 @@ const speakMessage = (text) => {
 </span>
            
 
-            {/* 🔥 VOICE TOGGLE TOP RIGHT */}
+            {/*  VOICE TOGGLE TOP RIGHT */}
             {mode && (
               <div className="voice-toggle">
                <div className={`voice-option ${voiceType === "male" ? "active" : ""}`} onClick={() => setVoiceType("male")}>

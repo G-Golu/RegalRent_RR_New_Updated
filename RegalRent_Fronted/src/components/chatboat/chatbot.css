@@ -45,7 +45,7 @@
   width: 380px;
   height: 580px;
 
-  background: rgba(255, 255, 255, 0.15);   /* 🔥 glass */
+  background: rgba(255, 255, 255, 0.15);   /*  glass */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 
@@ -77,10 +77,10 @@
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* BACK BUTTON FIX (CLICKABLE 🔥) */
+/* BACK BUTTON FIX (CLICKABLE ) */
 .cbp-back-btn-unique {
   position: relative;
-  z-index: 20;   /* 🔥 higher than everything */
+  z-index: 20;   /*  higher than everything */
   background: rgba(255,255,255,0.2);
   border: none;
   color: white;
@@ -96,7 +96,7 @@
   padding: 18px;
   overflow-y: auto;
 
-  background: transparent; /* 🔥 important for glass */
+  background: transparent; /*  important for glass */
 }
 
 /* ================= OPTIONS ================= */

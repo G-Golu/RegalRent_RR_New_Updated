@@ -73,7 +73,7 @@
   position: relative;
   color: #fff;
 
-  /* 🔥 PURE DARK GLASS */
+  /*  PURE DARK GLASS */
   background: rgba(255,255,255,0.04);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.08);
@@ -257,7 +257,7 @@
   position: relative;
   color: #fff;
 
-  /* 🔥 GLASS */
+  /*  GLASS */
   background: linear-gradient(
     145deg,
     rgba(255,255,255,0.06),
