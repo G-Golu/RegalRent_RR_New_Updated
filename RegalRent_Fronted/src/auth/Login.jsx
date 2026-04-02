@@ -256,7 +256,7 @@ console.log("Stored Token:", localStorage.getItem("token"));
         // ✅ Store user
         localStorage.setItem("user", JSON.stringify(updatedUser));
 
-        // 🔥 IMPORTANT: store token
+        //  IMPORTANT: store token
         // localStorage.setItem("token", res.token); 27-03-2026 , commentd
 
         // ✅ Notify UI (Header update)
