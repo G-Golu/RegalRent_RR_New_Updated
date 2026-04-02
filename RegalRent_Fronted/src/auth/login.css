@@ -218,3 +218,103 @@
 .glassy-right a:hover {
   text-decoration: underline;
 }
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+/* 📱 Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .glassy-login-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .glassy-right {
+    padding: 35px;
+  }
+
+  .glassy-right h2 {
+    font-size: 22px;
+  }
+}
+
+/* 📱 Mobile (below 768px) */
+@media (max-width: 768px) {
+  .glassy-login-card {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  /* 🔥 image top me chali jayegi */
+  .glassy-left {
+    width: 100%;
+    height: 220px;
+  }
+
+  .glassy-left img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* form neeche */
+  .glassy-right {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .glassy-right h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .glassy-form input,
+  .glassy-form select {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .glassy-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* 📱 Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .glassy-login-page {
+    padding: 15px;
+  }
+
+  .glassy-login-card {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .glassy-left {
+    height: 180px;
+  }
+
+  .glassy-right {
+    padding: 20px;
+  }
+
+  .glassy-right h2 {
+    font-size: 18px;
+  }
+
+  .glassy-form input,
+  .glassy-form select {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .glassy-form button {
+    padding: 11px;
+    font-size: 13px;
+  }
+}
