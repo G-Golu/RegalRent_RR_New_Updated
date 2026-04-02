@@ -193,19 +193,20 @@ const Signup = () => {
   };
 
   return (
-    <div className="saas-signup-page">
+  <div className="saas-signup-page">
 
-       
-    {/* ✅ BUBBLES BACKGROUND */}
-    <div className="saas-bubbles">
-    {Array.from({ length: 25 }).map((_, i) => (
-    <span key={i}></span>
-  ))}
+    <div className="saas-signup-wrapper">
 
- </div>
+      {/* LEFT SIDE IMAGE */}
+      <div className="saas-signup-left">
+        <img src="/authImg/signupChat2.png" alt="signup" />
+      </div>
 
-      <div className="saas-signup-card">
-        <h2 className="saas-title">Create Account</h2>
+      {/* RIGHT SIDE FORM */}
+      <div className="saas-signup-right">
+
+        <h2 className="saas-title">Create Account</h2> <br/>
+        <p className="saas-subtitle">Join us and start your journey </p>
 
         <form onSubmit={handleSignup} className="saas-form">
 
@@ -237,10 +238,8 @@ const Signup = () => {
             name="role"
             value={form.role}
             onChange={handleChange}
-            // className="auth-select"
           >
             <option value="user">User</option>
-           
           </select>
 
           <button type="submit" disabled={loading}>
@@ -254,8 +253,10 @@ const Signup = () => {
         </p>
 
       </div>
+
     </div>
-  );
+  </div>
+);
 };
 
 export default Signup;
